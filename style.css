@@ -1,1 +1,173 @@
+:root {
+    --cor-fundo: #ffeede;
+    --cor-cartao: #dfa564;
+    --cor-principal: #c27142;
+    --cor-destaque: #b65c0d;
+    --cor-texto: #000000;
+    --cor-borda: #b35516;
+    --cor-hover: #df7c3b;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #e7ac75;;
+    color:  #a55a13;;
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+.menu-superior {
+    background-color:  #974900;;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(207, 100, 11, 0.1);
+}
+
+.list-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.list-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.list-nav a:hover,
+.list-nav a.ativo {
+    background-color: var(--cor-destaque);
+}
+
+/* ==========================================
+   3. ÁREA PRINCIPAL E TÍTULOS
+   ========================================== */
+.costureiras {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.costureiras h1 {
+    font-size: 2rem;
+    color: var(--cor-principal);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.costureiras h2 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* ==========================================
+   4. CARTÕES DOS ESTABELECIMENTOS (.box)
+   ========================================== */
+.box {
+    background-color: var(--cor-cartao);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 20px;
+}
+
+.box h3 {
+    color: var(--cor-principal);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-fundo);
+    padding-bottom: 8px;
+}
+
+/* Listas de links dentro do cartão */
+.box ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.box ul li {
+    margin-bottom: 10px;
+}
+
+.box ul li a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.box ul li a:hover {
+    color: var(--cor-hover);
+    text-decoration: underline;
+}
+
+/* Lista de diferenciais */
+.diferenciais {
+    list-style: disc !important;
+    padding-left: 20px;
+    color: #555555;
+    background-color: #fafafa;
+    padding: 15px 15px 15px 35px;
+    border-radius: 8px;
+}
+
+.diferenciais li {
+    margin-bottom: 8px !important;
+    font-weight: normal !important;
+}
+
+/* Imagens dos logos */
+.box img {
+    display: block;
+    margin: 15px auto 0 auto;
+    object-fit: cover;
+}
+
+/* ==========================================
+   5. SEPARADORES E BOTÃO FINAL
+   ========================================== */
+.tracinho {
+    border: 0;
+    height: 1px;
+    background-color: var(--cor-borda);
+    margin: 20px 0;
+}
+
+.negocio {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.negocio ul {
+    list-style: none;
+}
+
+.negocio a {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.negocio a:hover {
+    background-color: #1a252f;
+}

@@ -4,8 +4,11 @@
     --cor-principal: #c27142;
     --cor-destaque: #b65c0d;
     --cor-texto: #000000;
-    --cor-borda: #b35516;
-    --cor-hover: #df7c3b;
+    --cor-hover: #995515;
+    --cor-texto-suave: #664d3c;
+    --cor-borda-suave: #edd3be;
+    --sombra-suave: 0 8px 24px rgba(130, 53, 17, 0.08);
+    --sombra-hover: 0 12px 28px rgba(130, 53, 17, 0.15);
 }
 
 * {
@@ -16,16 +19,40 @@
 }
 
 body {
-    background-color: #e7ac75;;
+    background-color: #e7ac75;
     color:  #a55a13;;
     line-height: 1.6;
     padding-bottom: 40px;
 }
 
 .menu-superior {
-    background-color:  #974900;;
+    background-color:  #974900;
     padding: 15px 20px;
     box-shadow: 0 2px 5px rgba(207, 100, 11, 0.1);
+}
+
+.list-select,
+.list-vision {
+    list-style: none;
+    display: inline-block;
+}
+
+.list-select a,
+.list-vision a {
+    display: inline-block;
+    background-color: #813511;
+    color: #f5e5d0;            
+    text-decoration: none;    
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.list-select a:hover,
+.list-vision a:hover {
+    background-color: #cc711c;
+    color: #2c1601;
 }
 
 .list-nav {
@@ -33,6 +60,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .list-nav a {
@@ -46,54 +74,53 @@ body {
 
 .list-nav a:hover,
 .list-nav a.ativo {
-    background-color: var(--cor-destaque);
+    background-color: #c58c57;
 }
 
-/* ==========================================
-   3. ÁREA PRINCIPAL E TÍTULOS
-   ========================================== */
-.costureiras {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 0 20px;
+.container-inicio {
+    background-color: #f5d8b7;    
+    padding: 25px;
+    margin: 20px;
+    box-shadow: var(--sombra-suave);
 }
 
-.costureiras h1 {
+.titule {
+    padding: 35px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titule h1 {
     font-size: 2rem;
-    color: var(--cor-principal);
+    color: #5f2c0a;
     text-align: center;
     margin-bottom: 5px;
 }
 
-.costureiras h2 {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 400;
+.titule h2 {
+    font-size: 1.25rem;
+    color: var(--cor-destaque);
+    font-weight: 600;
+    margin-bottom: 50px;
 }
 
-/* ==========================================
-   4. CARTÕES DOS ESTABELECIMENTOS (.box)
-   ========================================== */
 .box {
-    background-color: var(--cor-cartao);
+    background-color: #dfa564;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--cor-borda);
-    margin-bottom: 20px;
+    box-shadow: 0 4px 12px #813511;
+    border: 1px solid #813511;
+    margin-bottom: 50px;
 }
 
 .box h3 {
-    color: var(--cor-principal);
+    color: #7a3b06;
     font-size: 1.4rem;
     margin-bottom: 15px;
-    border-bottom: 2px solid var(--cor-fundo);
+    border-bottom: 2px solid #813511;
     padding-bottom: 8px;
 }
 
-/* Listas de links dentro do cartão */
 .box ul {
     list-style: none;
     margin-bottom: 15px;
@@ -104,7 +131,7 @@ body {
 }
 
 .box ul li a {
-    color: var(--cor-destaque);
+    color: #974610;
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
@@ -112,40 +139,81 @@ body {
 }
 
 .box ul li a:hover {
-    color: var(--cor-hover);
+    color: #813511;
     text-decoration: underline;
 }
 
-/* Lista de diferenciais */
+.comercios.box,
+.servicos.box {
+    background-color: var(--cor-cartao);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--cor-borda-suave);
+    margin-bottom: 50px;
+}
+
+.comercios h3,
+.servicos h3 {
+    font-size: 1.35rem;
+    color: var(--cor-principal);
+    margin-bottom: 18px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.list-comercios,
+.list-servicos {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+
+.list-comercios li a,
+.list-servicos li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #7a4213;
+    color:  #f8e0c0;
+    padding: 16px;
+    min-height: 180px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid var(--cor-borda-suave);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: all 0.25s ease;
+}
+
+.list-comercios li a:hover,
+.list-servicos li a:hover {
+    background-color:  #d3975f;
+    color: #7a3e0d;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-hover);
+}
+
 .diferenciais {
-    list-style: disc !important;
+    list-style: disc;
     padding-left: 20px;
-    color: #555555;
-    background-color: #fafafa;
+    color: #411c04;
+    background-color: #cf7932;
     padding: 15px 15px 15px 35px;
     border-radius: 8px;
 }
 
 .diferenciais li {
-    margin-bottom: 8px !important;
-    font-weight: normal !important;
+    margin-bottom: 8px;
+    font-weight: normal;
 }
 
-/* Imagens dos logos */
 .box img {
     display: block;
     margin: 15px auto 0 auto;
     object-fit: cover;
-}
-
-/* ==========================================
-   5. SEPARADORES E BOTÃO FINAL
-   ========================================== */
-.tracinho {
-    border: 0;
-    height: 1px;
-    background-color: var(--cor-borda);
-    margin: 20px 0;
 }
 
 .negocio {
@@ -159,8 +227,8 @@ body {
 
 .negocio a {
     display: inline-block;
-    background-color: var(--cor-principal);
-    color: #ffffff;
+    background-color:  #cf7932;
+    color: #f5e5d0;
     padding: 12px 25px;
     border-radius: 25px;
     text-decoration: none;
@@ -169,5 +237,38 @@ body {
 }
 
 .negocio a:hover {
-    background-color: #1a252f;
+    background-color: #692d05;
+}
+
+.depoimentos {
+    background-color: #f1bf85;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #813511;
+    border: 1px solid #813511;
+    margin-bottom: 50px;
+}
+
+.cadastro {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cadastro ul {
+    list-style: none;
+}
+
+.cadastro a {
+    display: inline-block;
+    background-color:  #cf7932;
+    color: #f5e5d0;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cadastro a:hover {
+    background-color: #692d05;
 }

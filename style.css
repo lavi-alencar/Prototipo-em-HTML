@@ -1,274 +1,559 @@
-:root {
-    --cor-fundo: #ffeede;
-    --cor-cartao: #dfa564;
-    --cor-principal: #c27142;
-    --cor-destaque: #b65c0d;
-    --cor-texto: #000000;
-    --cor-hover: #995515;
-    --cor-texto-suave: #664d3c;
-    --cor-borda-suave: #edd3be;
-    --sombra-suave: 0 8px 24px rgba(130, 53, 17, 0.08);
-    --sombra-hover: 0 12px 28px rgba(130, 53, 17, 0.15);
+/* =====================================================
+   1. PALETA DE CORES
+   ===================================================== */
+:root{
+  --bg:#e7bd82;          /* fundo da página (creme bem claro) */
+  --surface:#FFFFFF;     /* fundo de cartões e do menu (branco) */
+  --sand:#F2DFC6;        /* bege, para destaques suaves */
+  --text:#3B2416;        /* cor do texto comum (marrom bem escuro, fácil de ler) */
+  --muted:#6B4228;       /* texto secundário (um pouco mais claro) */
+  --head:#4A2A18;        /* cor dos títulos */
+  --brand:#7B4A2D;       /* COR PRINCIPAL: botões e cartões */
+  --brand-hover:#4A2A18; /* cor do botão quando o mouse passa em cima (mais escura) */
+  --on-brand:#FFFFFF;    /* cor do texto que fica EM CIMA da cor principal */
+  --accent:#A8642A;      /* caramelo escuro, para detalhes e palavras de destaque */
+  --caramel:#C98B4F;     /* caramelo claro (usado no contorno ao navegar pelo teclado) */
+  --line:#E6CFB2;        /* cor das linhas e bordas finas */
+  --shadow:0 6px 20px rgba(74,42,24,.14); /* sombra suave dos cartões */
+  color-scheme:light;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+/* =====================================================
+   2. BASE (regras gerais que valem para o site todo)
+   ===================================================== */
+
+/* "*" significa "todos os elementos".
+   Zera as margens que o navegador coloca por conta própria e usa
+   box-sizing:border-box, que faz o tamanho (largura) já incluir
+   borda e espaçamento interno. Sem isso, as contas de tamanho
+   viram uma bagunça e os elementos "estouram" a tela. */
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html{
+  scroll-behavior:smooth;  /* ao clicar num link do menu, a página desliza suavemente */
+  scroll-padding-top:88px; /* deixa uma folga no topo, para o menu fixo não cobrir o título da seção */
 }
 
-body {
-    background-color: #e7ac75;
-    color:  #a55a13;;
-    line-height: 1.6;
-    padding-bottom: 40px;
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Nunito',system-ui,sans-serif; 
+  line-height:1.65;  /* espaço entre as linhas: deixa o texto mais confortável de ler */
+  font-size:1.05rem; /* "rem" é uma medida que respeita a configuração de tamanho de letra da pessoa */
 }
 
-.menu-superior {
-    background-color:  #974900;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(207, 100, 11, 0.1);
+h1,h2,h3{ font-family:'Baloo 2','Nunito',sans-serif; color:var(--head); line-height:1.15; }
+h2{ font-size:clamp(1.6rem,3.5vw,2.2rem); }
+/* clamp(mínimo, ideal, máximo): o título cresce e diminui conforme a tela,
+   mas nunca fica menor que 1.6rem nem maior que 2.2rem. */
+
+a{ color:inherit; } 
+
+ul{ list-style:none; }
+
+/* Contorno que aparece ao navegar pelo teclado (Tab), usando o caramelo claro da paleta.
+   ":focus-visible" só mostra o contorno para quem usa teclado, não ao clicar com o mouse. */
+:focus-visible{ outline:3px solid var(--caramel); outline-offset:3px; }
+
+/* NOVO: era ".container", que não existe no HTML. O <main> assumiu esse papel. */
+main{
+  width:min(1120px,92%); 
+  margin-inline:auto;   /* centraliza horizontalmente o elemento de bloco */
 }
 
-.list-select,
-.list-vision {
-    list-style: none;
-    display: inline-block;
-}
+section{ padding:3.5rem 0; } /* espaço em cima e embaixo de cada seção */
 
-.list-select a,
-.list-vision a {
-    display: inline-block;
-    background-color: #813511;
-    color: #f5e5d0;            
-    text-decoration: none;    
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.list-select a:hover,
-.list-vision a:hover {
-    background-color: #cc711c;
-    color: #2c1601;
-}
-
-.list-nav {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.list-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background 0.3s;
-}
-
-.list-nav a:hover,
-.list-nav a.ativo {
-    background-color: #c58c57;
-}
-
-.container-inicio {
-    background-color: #f5d8b7;    
-    padding: 25px;
-    margin: 20px;
-    box-shadow: var(--sombra-suave);
-}
-
-.titule {
-    padding: 35px 20px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.titule h1 {
-    font-size: 2rem;
-    color: #5f2c0a;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.titule h2 {
-    font-size: 1.25rem;
-    color: var(--cor-destaque);
-    font-weight: 600;
-    margin-bottom: 50px;
-}
-
-.box {
-    background-color: #dfa564;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px #813511;
-    border: 1px solid #813511;
-    margin-bottom: 50px;
-}
-
-.box h3 {
-    color: #7a3b06;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #813511;
-    padding-bottom: 8px;
-}
-
-.box ul {
-    list-style: none;
-    margin-bottom: 15px;
-}
-
-.box ul li {
-    margin-bottom: 10px;
-}
-
-.box ul li a {
-    color: #974610;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: color 0.2s;
-}
-
-.box ul li a:hover {
-    color: #813511;
-    text-decoration: underline;
-}
-
-.comercios.box,
-.servicos.box {
-    background-color: var(--cor-cartao);
-    padding: 25px;
-    border-radius: 16px;
-    border: 1px solid var(--cor-borda-suave);
-    margin-bottom: 50px;
-}
-
-.comercios h3,
-.servicos h3 {
-    font-size: 1.35rem;
-    color: var(--cor-principal);
-    margin-bottom: 18px;
-    text-align: center;
-    font-weight: 700;
-}
-
-.list-comercios,
-.list-servicos {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+/* era ".eyebrow"; no HTML a classe se chama "inter" */
+.inter{
+  display:inline-block; font-weight:700; font-size:.85rem;
+  letter-spacing:.12em;      /* afasta um pouco as letras */
+  text-transform:uppercase;  /* deixa tudo em maiúsculas */
+  color:var(--accent); margin-bottom:.5rem;
 }
 
 
-.list-comercios li a,
-.list-servicos li a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #7a4213;
-    color:  #f8e0c0;
-    padding: 16px;
-    min-height: 180px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    border: 1px solid var(--cor-borda-suave);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    transition: all 0.25s ease;
+/* =====================================================
+   3. BOTÕES
+   ===================================================== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  min-height:48px;  /* tamanho mínimo para o dedo acertar no celular */
+  padding:.8rem 1.6rem;
+  border:2px solid var(--brand);
+  border-radius:700px; 
+  background:var(--brand); color:var(--on-brand);
+  font:700 1rem 'Nunito',sans-serif;
+  text-decoration:none; cursor:pointer;
+  transition:transform .2s, background .2s;
 }
 
-.list-comercios li a:hover,
-.list-servicos li a:hover {
-    background-color:  #d3975f;
-    color: #7a3e0d;
-    transform: translateY(-2px);
-    box-shadow: var(--sombra-hover);
+.btn:hover{
+  /* ":hover" = quando o mouse está em cima */
+  background:var(--brand-hover); border-color:var(--brand-hover);
+  transform:translateY(-2px); /* sobe 2px proporcionando interatividade */
 }
 
-.diferenciais {
-    list-style: disc;
-    padding-left: 20px;
-    color: #411c04;
-    background-color: #cf7932;
-    padding: 15px 15px 15px 35px;
-    border-radius: 8px;
+
+/* =====================================================
+   4. MENU
+   ===================================================== */
+/* era ".header" + ".header .container": no HTML os dois viraram o <header class="menu-superior"> */
+.menu-superior{
+  position:sticky; top:0; /**** "sticky" = gruda no topo ao rolar a página */
+  z-index:50;             /**** -index alto = fica POR CIMA dos outros elementos */
+  background:var(--surface); border-bottom:1px solid var(--line);
+  display:flex;                   /* flex = coloca os itens lado a lado, em linha */
+  align-items:center;             /* alinha todos no meio, na vertical */
+  justify-content:space-between;  /* logo à esquerda, menu à direita */
+  gap:1rem; min-height:72px;
+  flex-wrap:wrap;                 /* NOVO: sem o botão de celular, os itens quebram de linha quando não cabem */
+  /* NOVO: faz o conteúdo do menu ter a mesma largura do <main> (máximo 1120px, mínimo 4% de folga),
+     mantendo o fundo branco ocupando a tela toda. Substitui o antigo ".header .container". */
+  padding-inline:max(4%, calc((100% - 1120px) / 2));
 }
 
-.diferenciais li {
-    margin-bottom: 8px;
-    font-weight: normal;
+/* era ".brand"; no HTML a classe se chama "marca" */
+.marca{
+  text-decoration:none;
+  font:800 1.7rem 'Baloo 2',sans-serif; color:var(--head);
+}
+.marca em{ font-style:normal; color:var(--accent); } /* "em" vem inclinado por padrão;com esta propriedade sai o itálico e pinta o ê */
+
+/* era ".nav ul"; no HTML a lista tem a classe "list-nav" */
+.list-nav{
+  display:flex; align-items:center; gap:.4rem;
+  flex-wrap:wrap; /* NOVO: os links quebram de linha quando não cabem */
+}
+.list-nav a{
+  display:block; padding:.55rem .9rem; border-radius:999px;
+  text-decoration:none; font-weight:700; font-size:.98rem; color:var(--muted);
+}
+.list-nav a:hover, .list-nav a.ativo{ background:var(--sand); color:var(--head); }
+/**** ".ativo" é a classe que o JavaScript coloca no link da seção que está na tela. */
+
+/* NOVO: era ".nav a.nav-cta", mas o HTML não tem essa classe.
+   Em vez de criar uma, destaquei o ÚLTIMO link do menu ("Agende sua experiência"). */
+.list-nav li:last-child a{ background:var(--brand); color:var(--on-brand); } /* botão "Agende sua experiência" */
+.list-nav li:last-child a:hover{ background:var(--brand-hover); }
+
+
+/* =====================================================
+   5. BANNER DE BOAS-VINDAS (hero)
+   ===================================================== */
+/* NOVO: no HTML o banner é o <article> direto dentro do <main> (não existe .hero nem .container).
+   Usei "main > article" para valer só aqui e não afetar outros <article> de outras páginas. */
+main > article{
+  position:relative;                  /* NOVO: serve de referência para a logo se posicionar */
+  padding:4rem 0 3rem;
+  display:grid;                       /**** grid = grade, divide o espaço em colunas */
+  grid-template-columns:1.15fr .85fr; /**** "fr" = fração: a coluna do texto é um pouco maior que a da logo */
+  column-gap:3rem; align-items:center;
+}
+main > article > *{ grid-column:1; } /* NOVO: todos os textos ficam na coluna da esquerda */
+
+h1{ font-size:clamp(2.2rem,5.5vw,3.6rem); font-weight:800; margin-bottom:1rem; }
+h1 span{ color:var(--accent); } /* pinta só a palavra "Conectaê" no título */
+main > article p{ font-size:1.15rem; color:var(--muted); max-width:34rem; margin-bottom:1.5rem; }
+
+.busca{
+  display:flex; flex-wrap:wrap; /* wrap = se não couber, o botão desce para a linha de baixo */
+  gap:.6rem; background:var(--surface); padding:.6rem;
+  border:1px solid var(--line); border-radius:999px;
+  box-shadow:var(--shadow); max-width:34rem;
+}
+.busca input{
+  flex:1 1 180px; /**** o campo estica para ocupar o espaço livre, mas nunca fica menor que 180px */
+  min-width:0; min-height:48px; padding:0 1.1rem;
+  border:0; border-radius:999px; background:transparent; color:var(--text);
+  font:600 1rem 'Nunito',sans-serif;
+}
+.busca input::placeholder{ color:var(--muted); opacity:.8; } /* estilo do texto de dica */
+
+/* NOVO: no HTML a imagem da logo tem a classe "logo" (antes eram .hero-art + .hero-art img).
+   "position:absolute" tira a logo do cálculo de altura da grade (assim os textos não se afastam),
+   e grid-row:1 / 5 + align-self:center a mantêm centralizada ao lado dos 4 textos. */
+.logo{
+  position:absolute;
+  grid-column:2; grid-row:1 / 5;
+  align-self:center; justify-self:center;
+  aspect-ratio:1;                        /**** proporção 1:1 = sempre quadrada */
+  max-width:380px; width:100%;
+  background:var(--sand);
+  border-radius:42%; 
+  box-shadow:var(--shadow);
+  object-fit:contain;
+  border:2.4rem solid var(--sand);       /* a logo ocupa 80% da moldura, sem distorcer (a borda faz o papel de espaço interno) */
 }
 
-.box img {
-    display: block;
-    margin: 15px auto 0 auto;
-    object-fit: cover;
+
+/* =====================================================
+   6. CATEGORIAS
+   ===================================================== */
+/* era ".grupo h3": no HTML o <h3> fica direto dentro do <section> */
+section h3{ font-size:1.5rem; margin-bottom:1rem; }
+
+/* era ".grupo + .grupo{ margin-top:2.5rem; }": no HTML cada grupo é um <section>.
+   Duas seções somam 3.5rem + 3.5rem = 7rem; o margin negativo reduz a distância para 2.5rem. */
+section:has(> .lista) + section:has(> .lista){ margin-top:-4.5rem; }
+
+/* era ".categorias": no HTML a lista tem a classe "lista" */
+.lista{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  /* Cabem quantos cartões de no mínimo 190px couberem na linha.
+     No computador ficam 3 ou mais por linha; no celular, 1 ou 2.
+     Tudo sozinho, sem precisar escrever regra para cada tamanho de tela. */
+  gap:1.1rem;
+}
+.lista li{ display:flex; } /* NOVO: faz o link (cartão) ocupar a altura toda do <li> */
+
+/* era ".card-cat": no HTML o cartão é o link <a> dentro de ".lista" */
+.lista a{
+  flex:1;                              /* NOVO: o cartão preenche o <li> */
+  display:flex; flex-direction:column; /* empilha o emoji em cima e o nome embaixo */
+  align-items:center; justify-content:center; /* NOVO: centraliza o texto na vertical também */
+  gap:.6rem; padding:2rem 1rem;
+  min-height:9.5rem;                   /* NOVO: mantém a altura dos cartões originais, que tinham emoji */
+  background:var(--brand); color:var(--on-brand);
+  border-radius:18px; text-decoration:none; font-weight:700; font-size:1.1rem;
+  box-shadow:var(--shadow); transition:transform .2s, background .2s;
+}
+.lista a span{ font-size:2.4rem; line-height:1; } /* tamanho do emoji (OPCIONAL: só funciona se o emoji estiver dentro de um <span> no link) */
+.lista a:hover{ background:var(--brand-hover); transform:translateY(-5px); }
+
+
+/* =====================================================
+   7. QUEM SOMOS
+   NOVO: usa o id="quem-somos" do HTML (o "#" no CSS significa "o elemento com este id").
+   ===================================================== */
+#quem-somos{ text-align:center; }                       /* título e parágrafos centralizados */
+#quem-somos h2{ margin-bottom:1rem; }
+#quem-somos > p{ max-width:44rem; margin:0 auto 1rem; color:var(--muted); font-size:1.1rem; }  /* ">" = só os parágrafos de cima, não os dos cartões */
+
+/* Os 4 cartões: cabem quantos de no mínimo 230px couberem na linha */
+#quem-somos ul{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.1rem; margin-top:2rem; text-align:left; }
+#quem-somos li{ padding:1.5rem; background:var(--surface); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); }
+#quem-somos li h3{ font-size:1.2rem; margin-bottom:.4rem; }
+#quem-somos li p{ color:var(--muted); }
+
+
+/* =====================================================
+   8. DEPOIMENTOS
+   ===================================================== */
+/* NOVO: no HTML os textos e as fotos estão soltos dentro de <section class="depoimento">.
+   Sem uma <div> em volta de cada um, montei os 3 cartões assim:
+   - cada <blockquote> vira o cartão (era ".depoimento");
+   - cada foto fica NA MESMA célula da grade, por cima do canto inferior esquerdo do cartão (era o ".avatar"). */
+.depoimento{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
+}
+/* "Depoimentos reais" e o título ocupam a largura toda. Eram ".section-head" (eyebrow + h2).
+   As margens negativas/reduzidas compensam o "gap" da grade para manter os espaços originais. */
+.depoimento > p{
+  grid-column:1 / -1; margin-bottom:-.75rem;
+  font-weight:700; font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent);
+}
+.depoimento > h2{ grid-column:1 / -1; margin-bottom:.5rem; }
+
+.depoimento blockquote{
+  display:flex; flex-direction:column; gap:1.1rem; /* NOVO: texto em cima e nome (cite) embaixo */
+  padding:1.6rem;                                   /* NOVO: antes havia um espaço extra embaixo para a foto; agora o <cite> ocupa esse espaço */
+  background:var(--surface); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow);
 }
 
-.negocio {
-    text-align: center;
-    margin-top: 30px;
+/* NOVO: nome e profissão do cliente, ao lado da foto.
+   A foto fica por cima do canto inferior esquerdo do cartão; o padding-left abre o espaço dela. */
+.depoimento cite{
+  margin-top:auto;                  /* o texto ocupa o espaço livre e empurra o nome sempre para o fim do cartão (alinhado com a foto) */
+  display:flex; flex-direction:column; justify-content:center;
+  min-height:46px;                  /* mesma altura da foto, para ficarem alinhados */
+  padding-left:calc(46px + .8rem);  /* 46px da foto + um respiro */
+  font-style:normal;                /* "cite" vem inclinado por padrão; aqui tiramos o itálico */
+}
+.depoimento cite strong{ color:var(--head); line-height:1.2; }  /* nome em destaque */
+.depoimento cite small{ color:var(--muted); }                    /* profissão mais suave */
+
+/* era ".avatar": no HTML a foto tem a classe "foto" */
+.foto{
+  align-self:end; justify-self:start;
+  margin:0 0 calc(1.6rem + 1px) calc(1.6rem + 1px); /* distância das bordas do cartão */
+  width:46px; height:46px; border-radius:50%; object-fit:cover;
+  background:var(--brand);
 }
 
-.negocio ul {
-    list-style: none;
+/* Posição de cada cartão: o 1º na coluna 1, o 2º na 2, o 3º na 3 (todos na linha 3, abaixo do título) */
+.depoimento blockquote, .foto{ grid-row:3; }
+.depoimento blockquote:nth-of-type(1), .foto:nth-of-type(1){ grid-column:1; }
+.depoimento blockquote:nth-of-type(2), .foto:nth-of-type(2){ grid-column:2; }
+.depoimento blockquote:nth-of-type(3), .foto:nth-of-type(3){ grid-column:3; }
+
+
+/* =====================================================
+   9. CHAMADA FINAL
+   ===================================================== */
+/* NOVO: no HTML a chamada final é o próprio <footer> (não existem .cta, .cta-box nem .contato).
+   Agora é uma caixa simples, com cada elemento numa linha (antes era "flex" e juntava
+   número, e-mail e botão na mesma linha). */
+footer{
+  width:min(1120px,92%); margin:0 auto 4rem;  /* era ".cta{ padding:0 0 4rem }" + ".container" */
+  padding:3rem 1.5rem; background:var(--sand); border-radius:28px; text-align:center;  /* era ".cta-box" */
+}
+footer h2{ max-width:36rem; margin:0 auto .6rem; }  /* "0 auto" centraliza o bloco na horizontal */
+footer p{ color:var(--muted); max-width:34rem; margin:0 auto 1.4rem; }
+footer h3{ font-size:1.2rem; margin-bottom:.4rem; }
+footer span{ display:inline-block; margin:0 1rem; font-weight:600; color:var(--muted); overflow-wrap:anywhere; } /* Número e e-mail, lado a lado (e um embaixo do outro se faltar espaço) */
+footer .btn{ display:flex; width:fit-content; margin:1.6rem auto 0; } /* NOVO: botão de cadastro SOZINHO numa linha, centralizado, abaixo do contato */
+
+
+/* =====================================================
+   10. RODAPÉ
+   ===================================================== */
+/* era ".footer": no HTML a última frase é o <small> dentro do <footer> */
+footer small{ display:block; margin-top:1.8rem; padding-top:1.6rem; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem; }
+
+
+/* =====================================================
+   11. CELULAR E TABLET
+   ===================================================== */
+@media (max-width:900px){
+
+  /* NOVO: no celular o menu quebra em mais linhas e fica mais alto,
+     então a folga no topo aumenta para ele não cobrir o título da seção ao clicar numa guia. */
+  html{ scroll-padding-top:150px; }
+
+  main > article{ grid-template-columns:1fr; text-align:center; }
+  /* 1fr = uma coluna só: a logo passa para cima do texto e tudo fica centralizado */
+
+  main > article p, .busca{ margin-inline:auto; }
+
+  /* NOVO: no celular a logo volta ao fluxo normal (deixa de ser "absolute") e vai para o início */
+  .logo{ position:static; grid-column:1; grid-row:auto; order:-1; max-width:260px; border-width:1.6rem; } /* order:-1 joga a logo para o início, antes do texto */
+
+  .menu-superior{ justify-content:center; padding-block:.6rem; } /* NOVO: sem botão de celular, o menu fica centralizado e os links quebram de linha */
+
+  /* NOVO: no celular os cartões de depoimento ficam um embaixo do outro (linhas 3, 4 e 5) */
+  .depoimento{ grid-template-columns:1fr; }
+  .depoimento blockquote:nth-of-type(1), .foto:nth-of-type(1){ grid-column:1; grid-row:3; }
+  .depoimento blockquote:nth-of-type(2), .foto:nth-of-type(2){ grid-column:1; grid-row:4; }
+  .depoimento blockquote:nth-of-type(3), .foto:nth-of-type(3){ grid-column:1; grid-row:5; }
 }
 
-.negocio a {
-    display: inline-block;
-    background-color:  #cf7932;
-    color: #f5e5d0;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+/* Em celulares bem estreitos o menu ocupa ainda mais linhas */
+@media (max-width:560px){
+  html{ scroll-padding-top:230px; }
 }
 
-.negocio a:hover {
-    background-color: #692d05;
+
+/* =====================================================
+   12. GUARDADO: regras de classes que NÃO existem no HTML atual
+   Mantive aqui para você não perder os comentários.
+   Pode apagar este bloco inteiro quando quiser, o site não muda.
+   ===================================================== */
+
+.section-head{ margin-bottom:1.75rem; }
+.section-head p{ color:var(--muted); margin-top:.4rem; }
+
+.grupo + .grupo{ margin-top:2.5rem; } /* só aplica espaço entre um grupo e o grupo seguinte */
+
+.btn-light{ background:var(--brand); color:var(--brand); } 
+.btn-light:hover{ background:var(--brand); color:var(--on-brand); }
+
+.menu-btn{
+  display:none; /**** escondido no computador; o bloco do celular (no final) o mostra */
+  width:48px; height:48px; border:2px solid var(--brand); border-radius:12px;
+  background:transparent; color:var(--brand); font-size:1.5rem; cursor:pointer;
 }
 
-.depoimentos {
-    background-color: #f1bf85;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px #813511;
-    border: 1px solid #813511;
-    margin-bottom: 50px;
+.hero-links{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.1rem; }
+.feedback{ min-height:1.6rem; margin-top:.8rem; font-weight:700; color:var(--accent); }
+/* min-height reserva o espaço da mensagem, para a página não "pular" quando ela aparece. */
+
+.hero-art{
+  display:grid; place-items:center;      /* centraliza a imagem dentro da moldura */
+  aspect-ratio:1;                        /**** proporção 1:1 = sempre quadrada */
+  max-width:380px; width:100%; justify-self:center;
+  background:var(--sand);
+  border-radius:42%; 
+  box-shadow:var(--shadow);
+}
+.hero-art img{ width:80%; height:auto; } /* a logo ocupa 80% da moldura, sem distorcer */
+
+/* COMO FUNCIONA (não existe no HTML atual) */
+.passos{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem;
+  counter-reset:passo; /**** cria um "contador" chamado passo, começando em zero */
+}
+.passo{ padding:1.6rem; background:var(--surface); border:1px solid var(--line); border-radius:18px; }
+.passo::before{
+  /**** "::before" cria um elemento extra ANTES do conteúdo, sem precisar escrevê-lo no HTML. */
+  counter-increment:passo; /* soma 1 no contador a cada cartão */
+  content:counter(passo);  /* escreve o número atual: 1, 2, 3 */
+  display:grid; place-items:center; width:42px; height:42px; margin-bottom:.8rem;
+  border-radius:50%; background:var(--sand); color:var(--head);
+  font:800 1.2rem 'Baloo 2',sans-serif;
+}
+.passo p{ color:var(--muted); margin-top:.3rem; }
+
+/* DEPOIMENTOS: regras antigas (formato de cartão com avatar de letra e nome) */
+.depoimentos{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.25rem; }
+.depoimento footer{ display:flex; align-items:center; gap:.8rem; }
+.avatar{
+  display:grid; place-items:center; width:46px; height:46px; border-radius:50%;
+  background:var(--brand); color:var(--on-brand); font:800 1.2rem 'Baloo 2',sans-serif;
+}
+.depoimento strong{ display:block; color:var(--head); } /* "block" faz o nome ficar numa linha e o cargo na de baixo */
+.depoimento small{ color:var(--muted); }
+
+.contato{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem 2rem; margin-top:1.4rem;
+  font-weight:600; color:var(--muted);
 }
 
-.cadastro {
-    text-align: center;
-    margin-top: 30px;
+/* MENU DE CELULAR com botão de 3 risquinhos (o HTML atual não tem esse botão) */
+@media (max-width:900px){
+  .hero-links{ justify-content:center; }
+  .menu-btn{ display:grid; place-items:center; } /* agora o botão de 3 risquinhos aparece */
+  .nav{
+    position:absolute; left:0; right:0; top:100%; /* o menu "cai" logo abaixo do topo */
+    display:none;                                  /* começa escondido */
+    background:var(--surface); border-bottom:1px solid var(--line); padding:.8rem 4%;
+  }
+  .nav.aberto{ display:block; } /* quando o JavaScript coloca a classe "aberto", o menu aparece */
+  .nav ul{ flex-direction:column; align-items:stretch; } /* itens um embaixo do outro */
+  .nav a{ padding:.9rem 1rem; }
 }
 
-.cadastro ul {
-    list-style: none;
+/* =====================================================
+   13. PÁGINAS DE CATEGORIA (Beleza, Moda, Alimentação, Decoração, Festa, Pets)
+   Estas regras valem para TODAS as páginas de categoria, pois usam as
+   mesmas classes. Para criar uma nova categoria, copie o HTML da Beleza
+   e troque só os textos.
+   ===================================================== */
+
+/* ----- Menu (caso o <nav class="menu-superior"> esteja dentro de um <header>) -----
+   ":has" significa "que tem dentro". Esta regra faz o <header> que contém o menu
+   grudar no topo ao rolar a página, como acontece no index. */
+header:has(> .menu-superior){ position:sticky; top:0; z-index:50; }
+
+
+/* ----- Título da página -----
+   A classe "titule" está no <main>. O centro fica só nos títulos,
+   porque os cartões ficam alinhados à esquerda para facilitar a leitura. */
+.titule{ padding:3rem 0 3.5rem; }
+.titule > h1{ text-align:center; margin-bottom:.4rem; }  /* "Setor Beleza" */
+.titule > h2{
+  text-align:center; margin-bottom:2rem;
+  font-size:clamp(1.1rem,2.5vw,1.4rem); font-weight:600; /* subtítulo menor que o título */
+  color:var(--accent);
 }
 
-.cadastro a {
-    display: inline-block;
-    background-color:  #cf7932;
-    color: #f5e5d0;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+
+/* ----- Cartão de cada negócio (".box") -----
+   ATENÇÃO: no index, a regra "main > article" desenha o banner de boas-vindas.
+   Como o ".box" também é um <article> dentro do <main>, as propriedades abaixo
+   (grade, espaçamento, posição) "desfazem" o banner. Uma classe (.box) vence
+   uma tag (article), então funciona sem mudar o index.
+
+   A GRADE tem 4 colunas, no computador:
+   [ nota ] [ distância ] [ espaço livre ] [ BOTÕES ]
+   O nome fica na linha de cima e as etiquetas na de baixo, à esquerda;
+   os botões ocupam as duas linhas, à direita (como no modelo do Figma). */
+.box{
+  display:grid; grid-template-columns:auto auto 1fr auto;
+  column-gap:.5rem; align-items:center;
+  position:static; padding:1.8rem; text-align:left;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:18px; box-shadow:var(--shadow);                      /* mesmo estilo dos cartões do index */
+}
+.box > h3{ grid-column:1 / 4; grid-row:1; font-size:1.5rem; margin-bottom:.5rem; }  /* nome do negócio */
+
+/* "Nota média" e "Distância": etiquetinhas bege, lado a lado */
+.box p{
+  display:inline-block; max-width:none; margin:0; padding:.25rem .9rem;
+  background:var(--sand); border-radius:999px;
+  font-size:.95rem; font-weight:700; color:var(--accent);
+}
+.box > p:nth-of-type(1){ grid-column:1; grid-row:2; }   /* nota */
+.box > p:nth-of-type(2){ grid-column:2; grid-row:2; }   /* distância */
+
+/* A linha divisória e os diferenciais ocupam a largura toda do cartão, embaixo */
+.box > .tracinho, .box > .diferenciais{ grid-column:1 / -1; }
+
+
+/* ----- Botões de links (os <a> das listas) -----
+   Mesma aparência do ".btn": marrom, pílula e sobe ao passar o mouse.
+   (Para o tom terracota do modelo do Figma, troque var(--brand) por #C4755A
+   e var(--brand-hover) por #A85F45 nas duas regras abaixo.) */
+.box ul li a, .negocio ul li a{
+  display:inline-flex; align-items:center; justify-content:center; text-align:center;
+  min-height:48px; padding:.5rem 1rem; line-height:1.25;   /* 48px: bom tamanho para o dedo acertar no celular */
+  background:var(--brand); color:var(--on-brand);
+  border-radius:999px; text-decoration:none; font-weight:700; font-size:.92rem;
+  transition:transform .2s, background .2s;
+}
+.box ul li a:hover, .negocio ul li a:hover{ background:var(--brand-hover); transform:translateY(-2px); }
+
+/* A lista de links (a que NÃO é de diferenciais) vira uma grade de 3 COLUNAS IGUAIS:
+   todos os botões com o mesmo tamanho, alinhados e organizados.
+   No computador ela fica à direita, na coluna 4, ocupando as duas linhas do cartão. */
+.box > ul:not(.diferenciais){
+  grid-column:4; grid-row:1 / 3;
+  display:grid; grid-template-columns:repeat(3,11rem); gap:.8rem;
+}
+.box ul:not(.diferenciais) li{ display:flex; }   /* o botão ocupa a altura toda da célula */
+.box ul li a{ flex:1; }                          /* e a largura toda */
+
+
+/* ----- Linha divisória ("tracinho") ----- */
+.tracinho{ border:0; border-top:1px solid var(--line); margin:1.4rem 0; }
+main > .tracinho{ margin:2rem 0; }               /* a linha que fica ENTRE um cartão e outro */
+
+
+/* ----- Diferenciais (lista de destaques do negócio) -----
+   Caixinha bege com um "✓" marrom antes de cada frase. */
+.diferenciais{ background:var(--sand); border-radius:14px; padding:1.2rem 1.4rem; }
+.diferenciais li{ display:flex; gap:.7rem; margin-bottom:.7rem; }
+.diferenciais li:last-child{ margin-bottom:0; }
+.diferenciais li::before{
+  content:"✓"; flex:none;                         /* "::before" cria o ✓ sem escrevê-lo no HTML */
+  display:grid; place-items:center; width:24px; height:24px; border-radius:50%;
+  background:var(--brand); color:var(--on-brand); font-size:.8rem; font-weight:800;
 }
 
-.cadastro a:hover {
-    background-color: #692d05;
+
+/* ----- Botão final "Alterar tipo de negócio" -----
+   Botão de CONTORNO (sem fundo), como o "Tipo de negócio" do modelo.
+   Ao passar o mouse, ele se preenche. */
+.negocio{ text-align:center; padding:1rem 0 4rem; }
+
+/* O <button> que abre a lista de categorias: contorno marrom, preenche ao passar o mouse ou quando a lista está aberta. */
+.negocio button{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:48px; padding:.5rem 1.6rem;
+  background:transparent; color:var(--brand); border:2px solid var(--brand); border-radius:999px;
+  font:700 .98rem 'Nunito',sans-serif; cursor:pointer; transition:transform .2s, background .2s;
+}
+.negocio button:hover, .negocio button[aria-expanded="true"]{ background:var(--brand); color:var(--on-brand); }
+
+/* As opções de categoria aparecem em fileira, embaixo do botão. */
+.negocio ul{ display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; margin-top:1.2rem; }
+/* O "display:flex" acima desfaz o atributo "hidden"; esta linha garante que a lista fique escondida até o clique. */
+.negocio ul[hidden]{ display:none; }
+
+.negocio ul li a{ background:transparent; color:var(--brand); border:2px solid var(--brand); }
+.negocio ul li a:hover{ background:var(--brand); color:var(--on-brand); }
+
+
+/* ----- Telas médias e pequenas -----
+   Até 1100px a linha ficaria apertada. Então os botões descem para BAIXO
+   do nome e das etiquetas, ocupando a largura toda do cartão, em 3 colunas. */
+@media (max-width:1100px){
+  .box{ grid-template-columns:auto auto 1fr; }
+  .box > ul:not(.diferenciais){ grid-column:1 / -1; grid-row:3; grid-template-columns:repeat(3,1fr); margin-top:1.1rem; }
+}
+
+/* No celular, os botões ficam um embaixo do outro, todos com a largura toda. */
+@media (max-width:700px){
+  .box{ padding:1.3rem; }
+  .box > ul:not(.diferenciais){ grid-template-columns:1fr; }
 }

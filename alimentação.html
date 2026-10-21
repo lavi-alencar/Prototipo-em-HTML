@@ -49,8 +49,7 @@
                 <!-- Conteúdo mantido pela estrutura -->
             </ul>
         </article>
-
-        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
+        
         <section class="negocio">
             <ul>
                 <li><a href="negocio.html">Alterar tipo de negócio</a></li>
@@ -58,20 +57,10 @@
         </section>
 
     </main>
-
-    <script>
-        function filtrarPorBairro() {
-            const bairroSelecionado = document.getElementById('select-bairro').value;
-            const cards = document.querySelectorAll('.estabelecimento-card');
-
-            cards.forEach(card => {
-                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    
+    <script src="script.js"></script>
+</body>
+    
+</html>
 </body>
 </html>

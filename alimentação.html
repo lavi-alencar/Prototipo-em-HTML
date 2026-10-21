@@ -2,79 +2,76 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setor Alimentação – Conectaê</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentação - Conectaê</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="menu-superior">
-    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
-    <nav>
-        <ul class="list-nav">
+    <header>
+        <nav class="menu-superior">
+            <ul class="list-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="comercios.html" class="ativo">Comércios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="costureiras">
+        <h1>Setor Alimentação</h1>
+        <h2>Seção Confeiteiros e Doceria</h2>
+
+        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
+        <section class="filtro-bairro box">
+            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
+            <select id="select-bairro" onchange="filtrarPorBairro()">
+                <option value="todos">Mostrar todos os locais</option>
+                <option value="centro">Centro (CEP: 42800-000)</option>
+                <option value="alto-da-cruz">Alto da Cruz (CEP: 42803-010)</option>
+            </select>
+        </section>
+
+        <article class="box estabelecimento-card" data-bairro="centro">
+            <h3>Confeitaria Anjo Bom</h3>
+            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
-    </nav>
-</header>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-<main class="titule">
-    <h1>Setor Alimentação</h1>
-    <h2>Seção Confeitaria</h2>
+            <hr class="tracinho">
 
-    <article class="box">
-        <h3>Confeitaria Anjo Bom</h3>
-        <p>Nota média: 4,8</p>
-        <p>Distância: 500 m</p>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-        <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
+        <section class="negocio">
+            <ul>
+                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+            </ul>
+        </section>
 
-        <hr class="tracinho">
+    </main>
 
-        <ul class="diferenciais">
-            <li>Entrega delivery + frete grátis</li>
-            <li>Bônus na compra de 3 pedidos em um único mês</li>
-            <li>Sabores autênticos e existentes somente em nossa confeitaria</li>
-        </ul>
-    </article>
+    <script>
+        function filtrarPorBairro() {
+            const bairroSelecionado = document.getElementById('select-bairro').value;
+            const cards = document.querySelectorAll('.estabelecimento-card');
 
-    <hr class="tracinho">
-
-    <article class="box">
-        <h3>Confeitaria Doce Sabor</h3>
-        <p>Nota média: 4,5</p>
-        <p>Distância: 200 m</p>
-
-        <ul>
-            <li><a href="https://wa.me/55DDDNUMERO">Entrar em contato no WhatsApp</a></li>
-            <li><a href="https://instagram.com/USUARIO">Encontrar no Instagram</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Doce+Sabor+Cama%C3%A7ari">Ver rotas</a></li>
-        </ul>
-
-        <hr class="tracinho">
-
-        <ul class="diferenciais">
-            <li>Valores acessíveis</li>
-            <li>Variedade de tamanhos</li>
-            <li>Topos de bolo personalizáveis gratuitos</li>
-        </ul>
-    </article>
-
-    <hr class="tracinho">
-
-    <section class="negocio">
-        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
-        <ul id="listaTipos" hidden></ul>
-    </section>
-</main>
-
-<script src="script.js"></script>
+            cards.forEach(card => {
+                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

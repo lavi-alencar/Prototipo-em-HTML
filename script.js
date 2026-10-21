@@ -136,3 +136,42 @@ if (linksDoMenu.length > 0) {
     window.addEventListener("scroll", destacarMenu);
     window.addEventListener("resize", destacarMenu);
 }
+
+/**
+ * CONECTAÊ - Módulo de Filtragem por Bairro e CEP (Camaçari)
+ */
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Inicializa o evento no select de filtro por bairro, se existir na página
+    const selectBairro = document.getElementById("select-bairro");
+
+    if (selectBairro) {
+        selectBairro.addEventListener("change", filtrarPorBairro);
+    }
+});
+
+/**
+ * Função responsável por exibir/ocultar os estabelecimentos
+ * de acordo com o bairro ou CEP selecionado pelo usuário.
+ */
+function filtrarPorBairro() {
+    const selectBairro = document.getElementById("select-bairro");
+    if (!selectBairro) return;
+
+    const bairroSelecionado = selectBairro.value.toLowerCase().trim();
+    const cartoes = document.querySelectorAll(".estabelecimento-card");
+
+    cartoes.forEach((card) => {
+        const bairroCard = card.getAttribute("data-bairro");
+
+        // Exibe todos os cartões se a opção for 'todos' ou se o bairro corresponder ao filtro
+        if (bairroSelecionado === "todos" || bairroCard === bairroSelecionado) {
+            card.style.display = "block";
+            // Aplica um pequeno efeito visual de fade-in
+            card.style.opacity = "1";
+        } else {
+            card.style.display = "none";
+            card.style.opacity = "0";
+        }
+    });
+}

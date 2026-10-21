@@ -2,78 +2,76 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setor Pets – Conectaê</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets - Conectaê</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="menu-superior">
-    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
-    <nav>
-        <ul class="list-nav">
+
+    <header>
+        <nav class="menu-superior">
+            <ul class="list-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="servicos.html" class="ativo">Serviços</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="costureiras">
+        <h1>Setor Pets</h1>
+        <h2>Seção Serviços Veterinários e Petshops</h2>
+
+        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
+        <section class="filtro-bairro box">
+            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
+            <select id="select-bairro" onchange="filtrarPorBairro()">
+                <option value="todos">Mostrar todos os locais</option>
+                <option value="centro">Centro (CEP: 42800-000)</option>
+                <option value="parafuso">Parafuso (CEP: 42811-000)</option>
+            </select>
+        </section>
+
+        <article class="box estabelecimento-card" data-bairro="centro">
+            <h3>Clínica Veterinária Camaçari</h3>
+            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
-    </nav>
-</header>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-<main class="titule">
-    <h1>Setor Pets</h1>
-    <h2>Seção Pet Shops</h2>
+            <hr class="tracinho">
 
-    <article class="box">
-        <h3>PetFeels</h3>
-        <p>Nota média: 4,5</p>
-        <p>Distância: 700 m</p>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-        <ul>
-            <li><a href="avaliacoes.html">Ver avaliações</a></li>
-            <li><a href="contato.html">Entrar em contato</a></li>
-            <li><a href="redes.html">Encontrar nas redes sociais</a></li>
-        </ul>
+        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
+        <section class="negocio">
+            <ul>
+                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+            </ul>
+        </section>
 
-        <hr class="tracinho">
+    </main>
 
-        <ul class="diferenciais">
-            <li>Usamos o WhatsApp para avisar sobre a data de vacinação, retorno para novo banho ou reposição de ração</li>
-            <li>Criamos um espaço de creche diurna para hospedagem segura para quando os tutores viajam</li>
-            <li>Vendemos comidinhas congeladas, rações super premium e petiscos naturais baseados na dieta do pet</li>
-        </ul>
-    </article>
+    <script>
+        function filtrarPorBairro() {
+            const bairroSelecionado = document.getElementById('select-bairro').value;
+            const cards = document.querySelectorAll('.estabelecimento-card');
 
-    <hr class="tracinho">
-
-    <article class="box">
-        <h3>Puppy’s</h3>
-        <p>Nota média: 4,6</p>
-        <p>Distância: 870 m</p>
-
-        <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
-
-        <hr class="tracinho">
-
-        <ul class="diferenciais">
-            <li>Mantemos um cadastro detalhado com preferências, alergias e reações do animal em visitas anteriores</li>
-            <li>Disponibilizamos serviços domésticos de banho e tosa, consultas veterinárias, pet sitting e/ou dog walking</li>
-            <li>Contamos com treinadores e atendentes focados em entender a rotina do animal para indicar os produtos ideais</li>
-        </ul>
-    </article>
-
-    <hr class="tracinho">
-
-    <section class="negocio">
-        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
-        <ul id="listaTipos" hidden></ul>
-    </section>
-</main>
-
-<script src="script.js"></script>
+            cards.forEach(card => {
+                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

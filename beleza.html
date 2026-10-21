@@ -2,81 +2,97 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setor Beleza – Conectaê</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza - Conectaê</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="menu-superior">
-    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
-    <nav>
-        <ul class="list-nav">
-            <li><a href="index.html#inicio">Início</a></li>
-            <li><a href="index.html#quem-somos">Quem somos</a></li>
-            <li><a href="index.html#comercios">Comércios</a></li>
-            <li><a href="index.html#servicos">Serviços</a></li>
-            <li><a href="index.html#contatos">Contatos</a></li>
-            <li><a href="index.html#agende">Agende sua experiência</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main class="titule">
-    <h1>Setor Beleza</h1>
-    <h2>Seção Salão de Beleza Feminino</h2>
+    <header>
+        <nav class="menu-superior">
+            <ul class="list-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="servicos.html" class="ativo">Serviços</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <article class="box">
-        <h3>Espaço Performance</h3>
-        <p>Nota média: 4,9</p>
-        <p>Distância: 3,5 km</p>
+    <main class="costureiras">
+        <h1>Setor Beleza</h1>
+        <h2>Seção Salão de Beleza Feminino</h2>
 
-        <ul>
+        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
+        <section class="filtro-bairro box">
+            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
+            <select id="select-bairro" onchange="filtrarPorBairro()">
+                <option value="todos">Mostrar todos os locais</option>
+                <option value="centro">Centro (CEP: 42800-000)</option>
+                <option value="gleba-b">Gleba B (CEP: 42802-000)</option>
+            </select>
+        </section>
+
+        <!-- ITEM 1 -->
+        <article class="box estabelecimento-card" data-bairro="centro">
+            <h3>Espaço Performance</h3>
+            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-        <hr class="tracinho">
+            <hr class="tracinho">
 
-        <ul class="diferenciais">
-            <li>Oferecer automassagem capilar, escalda-pés ou aromaterapia durante a lavagem</li>
-            <li>Um ambiente bonito, aromatizado, com iluminação adequada para fotos e impecavelmente limpo</li>
-            <li>Conta com estacionamento exclusivo, wi-fi rápido de acesso livre e espaço infantil e pet friendly</li>
-        </ul>
-    </article>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-    <hr class="tracinho">
-
-    <article class="box">
-        <h3>Beauty Studio</h3>
-        <p>Nota média: 4,8</p>
-        <p>Distância: 2 km</p>
-
-        <ul>
+        <!-- ITEM 2 -->
+        <article class="box estabelecimento-card" data-bairro="gleba-b">
+            <h3>Beauty Studio</h3>
+            <p class="info-localizacao"><strong>Bairro:</strong> Gleba B | <strong>CEP:</strong> 42802-000</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-        <hr class="tracinho">
+            <hr class="tracinho">
 
-        <ul class="diferenciais">
-            <li>Criamos pacotes completos de pré-produção para eventos especiais com exclusividade de espaço</li>
-            <li>Disponibilizamos tablets com ideias de cortes, cores e nail art para o cliente escolher a inspiração</li>
-            <li>Oferecemos descontos para clientes que devolvem embalagens vazias de produtos para reciclagem</li>
-        </ul>
-    </article>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-    <hr class="tracinho">
+        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
+        <section class="negocio">
+            <ul>
+                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+            </ul>
+        </section>
 
-    <section class="negocio">
-        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
-        <ul id="listaTipos" hidden></ul>
-    </section>
-</main>
+    </main>
 
-<script src="script.js"></script>
+    <script>
+        function filtrarPorBairro() {
+            const bairroSelecionado = document.getElementById('select-bairro').value;
+            const cards = document.querySelectorAll('.estabelecimento-card');
+
+            cards.forEach(card => {
+                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

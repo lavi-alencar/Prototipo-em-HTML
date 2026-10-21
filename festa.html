@@ -17,54 +17,52 @@
         </nav>
     </header>
 
-    <main class="titule">
+    <main class="costureiras">
         <h1>Setor Festas</h1>
         <h2>Seção Espaços para Eventos</h2>
 
-        <article class="box">
+        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
+        <section class="filtro-bairro box">
+            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
+            <select id="select-bairro" onchange="filtrarPorBairro()">
+                <option value="todos">Mostrar todos os locais</option>
+                <option value="centro">Centro (CEP: 42800-000)</option>
+                <option value="busca-vida">Busca Vida (CEP: 42820-000)</option>
+            </select>
+        </section>
+
+        <!-- ITEM 1: CASA SALVATORE -->
+        <article class="box estabelecimento-card" data-bairro="centro">
             <h3>Casa Salvatore</h3>
-            <p>Nota média: 4.8</p>
-            <p>Distância: 500m</p>
-
+            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
+                <li><a href="avaliacoes.html">Ver avaliações</a></li>
                 <li><a href="contato.html">Entrar em contato</a></li>
+                <li><a href="redes.html">Encontrar nas redes sociais</a></li>
             </ul>
-
-             <hr class="tracinho">
-            
-            <ul class="diferenciais">
-                <li>Contratos que contemplam mobiliário base, equipe de segurança, limpeza e suporte técnico</li>
-                <li>Espaços moduláveis que se adaptam tanto a festas intimistas quanto a grandes celebrações</li>
-                <li>Locais que combinam salões fechados com áreas ao ar livre, como jardins e rooftops, permitem eventos em dois climas</li>
-            </ul>
-
         </article>
 
-        <hr class="tracinho">
-
-        <article class="box">
+        <!-- ITEM 2: PORTO SALVADOR EVENTOS -->
+        <article class="box estabelecimento-card" data-bairro="busca-vida">
             <h3>Porto Salvador Eventos</h3>
-            <p>Nota média: 4.6</p>
-            <p>Distância: 860m</p>
+            <p class="info-localizacao"><strong>Bairro:</strong> Busca Vida | <strong>CEP:</strong> 42820-000</p>
             <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
             </ul>
 
             <hr class="tracinho">
 
             <ul class="diferenciais">
-                <li>Ideal para eventos sociais, casamentos, formaturas e festas temáticas</li>
-                <li>Espaço amplo e estruturado para festas de grande e médio porte</li>
-                <li>Espaços com jardins ou varandas permitem aproveitar a luz do dia e o pôr do sol antes da festa noturna</li>
+                <!-- Conteúdo mantido pela estrutura -->
             </ul>
         </article>
 
-        <hr class="tracinho">
-
+        <!-- BOTÃO DE ALTERAR NEGÓCIO -->
         <section class="negocio">
             <ul>
                 <li><a href="negocio.html">Alterar tipo de negócio</a></li>
@@ -73,5 +71,19 @@
 
     </main>
 
+    <script>
+        function filtrarPorBairro() {
+            const bairroSelecionado = document.getElementById('select-bairro').value;
+            const cards = document.querySelectorAll('.estabelecimento-card');
+
+            cards.forEach(card => {
+                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

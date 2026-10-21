@@ -2,81 +2,76 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setor Decoração – Conectaê</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoração - Conectaê</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="menu-superior">
-    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
-    <nav>
-        <ul class="list-nav">
-            <li><a href="index.html#inicio">Início</a></li>
-            <li><a href="index.html#quem-somos">Quem somos</a></li>
-            <li><a href="index.html#comercios">Comércios</a></li>
-            <li><a href="index.html#servicos">Serviços</a></li>
-            <li><a href="index.html#contatos">Contatos</a></li>
-            <li><a href="index.html#agende">Agende sua experiência</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main class="titule">
-    <h1>Setor Decoração</h1>
-    <h2>Seção Itens para o lar</h2>
+    <header>
+        <nav class="menu-superior">
+            <ul class="list-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="comercios.html" class="ativo">Comércios</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <article class="box">
-        <h3>EcoLar</h3>
-        <p>Nota média: 4,9</p>
-        <p>Distância: 960 m</p>
+    <main class="costureiras">
+        <h1>Setor Decoração</h1>
+        <h2>Seção Artigos de Decoração e Design</h2>
 
-        <ul>
+        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
+        <section class="filtro-bairro box">
+            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
+            <select id="select-bairro" onchange="filtrarPorBairro()">
+                <option value="todos">Mostrar todos os locais</option>
+                <option value="ponto-certo">Ponto Certo (CEP: 42801-170)</option>
+                <option value="centro">Centro (CEP: 42800-000)</option>
+            </select>
+        </section>
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo">
+            <h3>Decora Camaçari</h3>
+            <p class="info-localizacao"><strong>Bairro:</strong> Ponto Certo | <strong>CEP:</strong> 42801-170</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-        <hr class="tracinho">
+            <hr class="tracinho">
 
-        <ul class="diferenciais">
-            <li>Temos um mix de produtos selecionado por designers de peças que não são facilmente encontradas em grandes magazines</li>
-            <li>Fechamos parcerias com artistas locais e cooperativas, vendendo peças com história e exclusividade</li>
-            <li>Temos uma linha de produtos feitos com materiais reciclados, madeira de reflorestamento ou tecidos sustentáveis</li>
-        </ul>
-    </article>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-    <hr class="tracinho">
+        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
+        <section class="negocio">
+            <ul>
+                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+            </ul>
+        </section>
 
-    <article class="box">
-        <h3>Domest&Co</h3>
-        <p>Nota média: 4,7</p>
-        <p>Distância: 1 km</p>
+    </main>
 
-        <ul>
-                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+    <script>
+        function filtrarPorBairro() {
+            const bairroSelecionado = document.getElementById('select-bairro').value;
+            const cards = document.querySelectorAll('.estabelecimento-card');
 
-        <hr class="tracinho">
-
-        <ul class="diferenciais">
-            <li>Disponibilizamos um serviço de “personal stylist” para a casa, indo ao local avaliar a iluminação e os espaços antes da compra</li>
-            <li>Usamos aromas marcantes na loja física e uma iluminação aconchegante para que o cliente sinta o clima de um “lar” ao entrar</li>
-            <li>Vendemos online, com simuladores de ambientes e recomendações inteligentes para facilitar a escolha</li>
-        </ul>
-    </article>
-
-    <hr class="tracinho">
-
-    <section class="negocio">
-        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
-        <ul id="listaTipos" hidden></ul>
-    </section>
-</main>
-
-<script src="script.js"></script>
+            cards.forEach(card => {
+                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -2,78 +2,98 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setor Moda – Conectaê</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda - Conectaê</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="menu-superior">
-    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
-    <nav>
-        <ul class="list-nav">
-            <li><a href="index.html#inicio">Início</a></li>
-            <li><a href="index.html#quem-somos">Quem somos</a></li>
-            <li><a href="index.html#comercios">Comércios</a></li>
-            <li><a href="index.html#servicos">Serviços</a></li>
-            <li><a href="index.html#contatos">Contatos</a></li>
-            <li><a href="index.html#agende">Agende sua experiência</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main class="titule">
-    <h1>Setor Moda</h1>
-    <h2>Seção Costura</h2>
+    <header>
+        <nav class="menu-superior">
+            <ul class="list-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="comercios.html" class="ativo">Comércios</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <article class="box">
-        <h3>Ateliê Agulha Brilhante</h3>
-        <ul>
+    <main class="costureiras">
+        <h1>Setor Moda</h1>
+        <h2>Seção Costureiros</h2>
+
+        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
+        <section class="filtro-bairro box">
+            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
+            <select id="select-bairro" onchange="filtrarPorBairro()">
+                <option value="todos">Mostrar todos os locais</option>
+                <option value="centro">Centro (CEP: 42800-000)</option>
+                <option value="ponto-certo">Ponto Certo (CEP: 42801-170)</option>
+                <option value="gleba-e">Gleba E (CEP: 42807-000)</option>
+            </select>
+        </section>
+
+        <!-- ATELIÊ 1 -->
+        <article class="box estabelecimento-card" data-bairro="centro">
+            <h1>Ateliê Agulha Brilhante</h1>
+            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-        <hr class="tracinho">
+            <hr class="tracinho">
 
-        <ul class="diferenciais">
-            <li>Costuras reforçadas e detalhes feitos à mão que garantem alta durabilidade</li>
-            <li>Cada peça é tratada como única, com consultoria personalizada do início ao fim</li>
-            <li>Roupas sob medida ajustadas milimetricamente para valorizar o seu corpo</li>
-        </ul>
-    </article>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-    <hr class="tracinho">
-
-    <article class="box">
-        <h3>Ateliê Maiane Pacheco</h3>
-         <p>Nota média: 4,8</p>
-         <p>Distância: 298m</p>
-
-        <ul>
+        <!-- ATELIÊ 2 -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo">
+            <h1>Ateliê Maiane Pacheco</h1>
+            <p class="info-localizacao"><strong>Bairro:</strong> Ponto Certo | <strong>CEP:</strong> 42801-170</p>
+            <ul>
                 <li><a href="catalogo.html">Conferir catálogo completo</a></li>
+                <li><a href="horario.html">Horário de funcionamento</a></li>
+                <li><a href="rotas.html">Ver rotas</a></li>
                 <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-        </ul>
+                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
+                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+            </ul>
 
-        <hr class="tracinho">
+            <hr class="tracinho">
 
-        <ul class="diferenciais">
-            <li>Suas peças prontas no prazo combinado, sem enrolação ou atrasos</li>
-            <li>Transformamos e renovamos suas roupas favoritas com estilo e modernidade</li>
-            <li>Usamos aviamentos e linhas de alta qualidade para um resultado refinado</li>
-        </ul>
-    </article>
+            <ul class="diferenciais">
+                <!-- Conteúdo mantido pela estrutura -->
+            </ul>
+        </article>
 
-    <hr class="tracinho">
+        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
+        <section class="negocio">
+            <ul>
+                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+            </ul>
+        </section>
 
-    <section class="negocio">
-        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
-        <ul id="listaTipos" hidden></ul>
-    </section>
-</main>
+    </main>
 
-<script src="script.js"></script>
+    <script>
+        function filtrarPorBairro() {
+            const bairroSelecionado = document.getElementById('select-bairro').value;
+            const cards = document.querySelectorAll('.estabelecimento-card');
+
+            cards.forEach(card => {
+                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

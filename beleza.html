@@ -21,7 +21,6 @@
         <h1>Setor Beleza</h1>
         <h2>Seção Salão de Beleza Feminino</h2>
 
-        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
         <section class="filtro-bairro box">
             <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
             <select id="select-bairro" onchange="filtrarPorBairro()">
@@ -79,20 +78,11 @@
         </section>
 
     </main>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
 
-    <script>
-        function filtrarPorBairro() {
-            const bairroSelecionado = document.getElementById('select-bairro').value;
-            const cards = document.querySelectorAll('.estabelecimento-card');
-
-            cards.forEach(card => {
-                if (bairroSelecionado === 'todos' || card.getAttribute('data-bairro') === bairroSelecionado) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>

@@ -2,92 +2,119 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conectaê – Conectando os comércios perto de você</title>
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<header>
-    <nav class="menu-superior">
+
+<header class="menu-superior">
+    <a href="#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
         <ul class="list-nav">
-            <li><a href="index.html" class="ativo">Sobre mim</a></li>
-            <li><a href="quem somos.html">Quem somos</a></li>
-            <li><a href="comercios.html">Comércios</a></li>
-            <li><a href="serviços.html">Serviços</a></li>
-            <li><a href="contatos.html">Contatos</a></li>
-            <li><a href="agendamento.html">Agende sua experiência</a></li>
+            <li><a href="#inicio" class="ativo">Início</a></li>
+            <li><a href="#quem-somos">Quem somos</a></li>
+            <li><a href="#comercios">Comércios</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contatos">Contatos</a></li>
+            <li><a href="#agende">Agende sua experiência</a></li>
         </ul>
     </nav>
 </header>
 
-<main class="container-inicio">
+<main>
 
-    <article class="box">
+    <article id="inicio">
+        <span class="inter">Intersecção do comércio local de Camaçari</span>
+        <h1>Bem-vindo ao <span>Conectaê</span>, conectando os comércios perto de você!</h1>
+        <p>Valorize quem constrói o seu bairro. Compre de quem tá perto de você!</p>
 
-    <h1>Bem-vindo ao Conectaê,</h1>
-    <h2>conectando os comércios perto de você!</h2>
-    <img style="width: 200px; border-radius: 50%;" src="link da img" alt="Logo do Conectaê"/>
-    <p>textinho</p>
+        <form class="busca">
+            <input type="text" placeholder="Digite seu bairro ou CEP" aria-label="Seu bairro ou CEP">
+            <button class="btn" type="submit">Buscar</button>
+        </form>
 
+        <img class="logo" src="Logo Conectaê.png" alt="Logo do Conectaê">
     </article>
 
-    <ul class="list-select">
-            <li><a href="selecione.html" >Selecione seu bairro aqui</a></li>
-    </ul>
+    <section id="quem-somos">
+        <span class="inter">Quem somos</span>
+        <h2>Valorizando o comércio do seu bairro</h2>
+        <p>O Conectaê é uma plataforma digital que reúne, em um único ambiente, microempresas e pequenos negócios, para valorizar e incentivar o comércio local e torná-lo prioridade em relação ao de outras cidades ou regiões próximas.</p>
+        <p>Com base na localização do usuário e no cadastro das empresas, ajudamos o morador a encontrar o que precisa perto de casa, sem longos deslocamentos, e ajudamos os negócios a crescer. O design é moderno e claro, para que pessoas de diferentes idades e capacidades usem com facilidade.</p>
 
-    <ul class="list-vision">
-        <li><a href="visualize.html" >Visualizar no Google Maps</a></li>
-    </ul>
-
-    <section class="comercios">
-
-        <ul class="list-comercios">
-            <h3>Comércios locais</h3>
-            <li><a href="moda.html" >Moda</a></li>
-            <li><a href="alimentação.html" >Alimentação</a></li>
-            <li><a href="decoracao.html" >Decoração</a></li>
+        <ul>
+            <li>
+                <h3>Descubra o bairro</h3>
+                <p>Selecione o bairro e veja os comércios locais divididos por segmentos, como padarias, vestuário e beleza.</p>
+            </li>
+            <li>
+                <h3>Divulgação</h3>
+                <p>Ajudamos os negócios a estarem onde os clientes estão: nas redes sociais, com anúncios e a criação e movimentação de contas, como Instagram e TikTok.</p>
+            </li>
+            <li>
+                <h3>Confiança</h3>
+                <p>Notas, comentários e o selo “Comércio Verificado do Bairro” geram credibilidade para pequenos negócios ainda pouco conhecidos.</p>
+            </li>
+            <li>
+                <h3>Busca instantânea</h3>
+                <p>Digite, por exemplo, “conserto de sapato” e veja os sapateiros do bairro.</p>
+            </li>
         </ul>
-
     </section>
 
-    <section class="servicos">
-
-          <ul class="list-servicos">
-            <h3>Serviços locais</h3>
-            <li><a href="beleza.html" >Beleza</a></li>
-            <li><a href="festa.html" >Festa</a></li>
-            <li><a href="pets.html" >Pets</a></li>
-          </ul>
-
+    <section id="comercios">
+        <h3>Comércios locais</h3>
+        <ul class="lista">
+            <li><a href="moda.html">Moda</a></li>
+            <li><a href="alimentação.html">Alimentação</a></li>
+            <li><a href="decoração.html">Decoração</a></li>
+        </ul>
     </section>
 
-    <section class="depoimentos">
+    <section id="servicos">
+        <h3>Serviços locais</h3>
+        <ul class="lista">
+            <li><a href="beleza.html">Beleza</a></li>
+            <li><a href="festa.html">Festa</a></li>
+            <li><a href="pets.html">Pets</a></li>
+        </ul>
+    </section>
+
+    <section class="depoimento">
         <p>Depoimentos reais</p>
         <h2>O que dizem nossos clientes?!</h2>
 
-        <p>O sistema é muito útil e funcional, me ajudou muito a encontrar os serviços e comércios próximos a mim sem nenhum custo. Super indico!</p>
-        <img style="width: 30px; border-radius: 50%;" src="link da img" alt="Foto cliente"/>
-        <p>Mariana Costa - Dona de casa</p>
+        <blockquote>“O sistema é muito útil e funcional, me ajudou muito a encontrar os serviços e comércios próximos a mim sem nenhum custo. Super indico!”
+            <cite><strong>Mariana Costa</strong><small>Dona de casa</small></cite>
+        </blockquote>
+        <img class="foto" src="cozinheira.png" alt="Foto de Mariana Costa">
 
-        <p>Que projeto sensacional! Proporcionou um grande impulso e alavancamento ao meu negócio. Me senti altamente valorizado dentro do meu próprio território.</p>
-        <img style="width: 30px; border-radius: 50%;" src="link da img" alt="Foto cliente"/>
-        <p>Renato Silveira - Empreendedor</p>
+        <blockquote>“Que projeto sensacional! Proporcionou um grande impulso e alavancamento ao meu negócio. Me senti altamente valorizado dentro do meu próprio território.”
+            <cite><strong>Renato Silveira</strong><small>Empreendedor</small></cite>
+        </blockquote>
+        <img class="foto" src="empresario.png" alt="Foto de Renato Silveira">
 
-        <p>Muito acessível para aqueles que não possuem facilidade com recursos tecnológicos. Obrigado!</p>
-        <img style="width: 30px; border-radius: 50%;" src="link da img" alt="Foto cliente"/>
-        <p>Augusto José - Veterinário aposentado</p>
+        <blockquote>“Muito acessível para aqueles que não possuem facilidade com recursos tecnológicos. Obrigado!”
+            <cite><strong>Augusto José</strong><small>Veterinário aposentado</small></cite>
+        </blockquote>
+        <img class="foto" src="aposentado.png" alt="Foto de Augusto José">
     </section>
+</main>
+<footer id="agende">
+    <h2>Pronto(a) para se integrar à maior plataforma local que reúne os comércios pertinhos de você?!</h2>
+    <p>Venha, conecte-se e faça parte desta rede de integração comercial camaçariense!</p>
+    <h3 id="contatos">Contato</h3>
+    <span>Número: (71) 9658-5017</span>
+    <span>E-mail: conectae.camacari@gmail.com</span>
+    <a class="btn" href="cadastrar.html">Cadastre seu negócio agora mesmo</a>
+    <small>Conectaê · Conectando os comércios perto de você!</small>
+</footer>
 
-    <footer class="chamada-final" style="text-align: center;">
-        <h1>Pronto(a) para se integrar à maior plataforma local que reúne os comércios pertinhos de você?!</h1>
-        <h2>Venha, conecte-se e faça parte desta rede de integração comercial camaçariense!</h2>
-        <h3>Contato</h3>
-        <p>Número: (71) 9658-5017</p>
-        <p>E-mail: conectae.camacari@gmail.com</p>
-
-        <ul class="cadastro">
-            <li><a href="cadastrar.html">Cadastre seu negócio agora mesmo</a></li>
-        </ul>
-    </footer>
-    </main>
+<script src="script.js"></script>
 </body>
-
+</html>

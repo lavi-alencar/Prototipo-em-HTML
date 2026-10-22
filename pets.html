@@ -2,66 +2,285 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pets - Conectaê</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setor Pets – Conectaê</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="menu-superior">
-            <ul class="list-nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="servicos.html" class="ativo">Serviços</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="menu-superior">
+    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
+        <ul class="list-nav">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#quem-somos">Quem somos</a></li>
+            <li><a href="index.html#comercios">Comércios</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contatos">Contatos</a></li>
+            <li><a href="index.html#agende">Agende sua experiência</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="costureiras">
+<main class="titule">
+    <section class="negocio">
         <h1>Setor Pets</h1>
-        <h2>Seção Serviços Veterinários e Petshops</h2>
+        <h2>Seção clínicas veterinárias, petshops e adestramento</h2>
+        <hr class="tracinho">
+        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
+        <ul id="listaTipos" hidden></ul>
+    </section>
 
-        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
-        <section class="filtro-bairro box">
-            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
-            <select id="select-bairro" onchange="filtrarPorBairro()">
-                <option value="todos">Mostrar todos os locais</option>
-                <option value="centro">Centro (CEP: 42800-000)</option>
-                <option value="parafuso">Parafuso (CEP: 42811-000)</option>
-            </select>
-        </section>
-
-        <article class="box estabelecimento-card" data-bairro="centro">
-            <h3>Clínica Veterinária Camaçari</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+    <div id="lista-estabelecimentos">
+        <!-- ==================== 1. CENTRO (CEP: 42800-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Filadélfia, 42, Centro" data-whatsapp="71988112233" data-instagram="banhoetosacamacari">
+            <h1>Estetipet Banho & Tosa Centro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Filadélfia, 42 - Centro | Banho, Tosa e Estética Animal</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Banho morno relaxante, hidratação de pelos e tosa higiênica ou da raça</li>
+                <li>Serviço de busca e entrega (Táxi Pet) no Centro e arredores</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
-        <section class="negocio">
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Avenida Radial A, 150, Centro" data-whatsapp="71988112234" data-instagram="vetcentrocamacari">
+            <h1>Consultório Veterinário São Francisco</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial A, 150 - Centro | Consultório Veterinário</p>
             <ul>
-                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-        </section>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Consultas clínicas de rotina, vacinação importada e atestado de saúde</li>
+                <li>Veterinários atenciosos e ambiente preparado para cães e gatos</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    </main>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Costa Pinto, 200, Centro" data-whatsapp="71988112235" data-instagram="petshopcentrocama">
+            <h1>Mundo Pet & Aquários Centro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Costa Pinto, 200 - Centro | Pet Shop e Aquarismo</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Rações super premium, coleiras, brinquedos e peixes ornamentais</li>
+                <li>Acessórios para aves, roedores e répteis</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
+        <!-- ==================== 2. PONTO CERTO (CEP: 42801-170) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Luiz Gonzaga, 105, Ponto Certo" data-whatsapp="71999334455" data-instagram="adestramentocamacari">
+            <h1>Camaçari Adestramento & Comportamento</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Luiz Gonzaga, 105 - Ponto Certo | Adestramento Canino</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Adestramento positivo para cães de todos os portes e idades</li>
+                <li>Correção de ansiedade de separação e socialização em grupo</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Francisco Drumond, 210, Ponto Certo" data-whatsapp="71999334456" data-instagram="hospitalvetpontocerto">
+            <h1>Hospital Veterinário Ponto Certo 24h</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 210 - Ponto Certo | Hospital Veterinário 24h</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Atendimento de urgência e emergência 24 horas por dia</li>
+                <li>Internação climatizada, raio-x, ultrassom e centro cirúrgico</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Comercial, 160, Ponto Certo" data-whatsapp="71999334457" data-instagram="hotelzinhopetpontocerto">
+            <h1>Hotelzinho & Creche Pet Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Comercial, 160 - Ponto Certo | Hospedagem Pet</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Hospedagem sem gaiolas com monitoramento 24h via câmeras</li>
+                <li>Atividades recreativas e creche diurna para cães agitados</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 3. GLEBA E (CEP: 42807-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua das Palmeiras, 30, Gleba E" data-whatsapp="71987443322" data-instagram="racoescamacari">
+            <h1>Casa das Rações & Medicamentos Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua das Palmeiras, 30 - Gleba E | Rações e Medicamentos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Linha completa de rações Premium e medicamentos antipulgas</li>
+                <li>Entrega grátis de sacos de ração no bairro da Gleba E</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Avenida Concêntrica, 300, Gleba E" data-whatsapp="71987443323" data-instagram="banhoetosaglebae">
+            <h1>Pet Shop & Banhos Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Concêntrica, 300 - Gleba E | Banho e Tosa</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Profissionais carinhosos e experientes no manuseio de animais idosos</li>
+                <li>Shampoos hipoalergênicos e corte de unhas inclusos</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua Bahia, 95, Gleba E" data-whatsapp="71987443324" data-instagram="vetglebae">
+            <h1>Clínica Veterinária Amigo Fiel</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Bahia, 95 - Gleba E | Consultório Veterinário</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Atendimento domiciliar para vacinação e exames de sangue</li>
+                <li>Castrações agendadas e raspagem de tártaro</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 4. ALTO DA CRUZ (CEP: 42803-010) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Avenida Radial B, 575, Alto da Cruz" data-whatsapp="7136278668" data-instagram="promedveterinaria">
+            <h1>Promed Veterinária & Pet Shop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial B, 575 - Alto da Cruz | Consultório e Pet Shop</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Consultório veterinário, pet shop abastecido e banho e tosa</li>
+                <li>Telefone oficial: (71) 3627-8668</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Gravatá, 120, Alto da Cruz" data-whatsapp="71988994411" data-instagram="racoessaojosealtodacruz">
+            <h1>Distribuidora de Rações São José</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Gravatá, 120 - Alto da Cruz | Casa de Rações</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Venda de rações a quilo ou em sacos fechados a preço competitivo</li>
+                <li>Medicamentos veterinários de farmácia pet básica</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Amparo, 75, Alto da Cruz" data-whatsapp="71988994412" data-instagram="tosadomicilioaltodacruz">
+            <h1>Tosa & Carinho em Domicílio</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Amparo, 75 - Alto da Cruz | Estética Canina Domiciliar</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Atendimento no conforto da sua residência sem estressar o pet</li>
+                <li>Equipamentos higienizados levados até a sua casa</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 5. INOCOOP (CEP: 42801-070) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 514, Inocoop" data-whatsapp="71999338800" data-instagram="haugveterinaria">
+            <h1>HAUG Clínica Veterinária 24h</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 514 - Inocoop - CEP: 42809-306 | Clínica Veterinária</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Pronto atendimento veterinário 24 horas para urgências</li>
+                <li>Equipe multiprofissional com exames laboratoriais na hora</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Rua Principal, 110, Inocoop" data-whatsapp="71999338801" data-instagram="petshopinocoop">
+            <h1>Pet Shop Camaçari Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Principal, 110 - Inocoop | Banho e Tosa</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Pacotes mensais de banho com preços promocionais</li>
+                <li>Acessórios fofos, roupinhas e petiscos para cães e gatos</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 320, Inocoop" data-whatsapp="71999338802" data-instagram="felinosinocoop">
+            <h1>Espaço Cat Friendly Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 320 - Inocoop | Atendimento Exclusivo para Gatos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Ambiente silencioso sem presença de cães para evitar estresse felino</li>
+                <li>Rações terapêuticas, caixas de areia e arranhadores</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

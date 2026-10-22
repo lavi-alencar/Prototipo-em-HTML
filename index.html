@@ -2,10 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Conectaê – Conectando os comércios perto de você</title>
- 
+    
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,51 +27,63 @@
 
 <main>
 
+    <!-- SEÇÃO INICIAL ESTRUTURADA (Texto à esquerda, Logo à direita) -->
     <article id="inicio">
         <span class="inter">Intersecção do comércio local de Camaçari</span>
-        <h1>Bem-vindo ao <span>Conectaê</span>, conectando os comércios perto de você!</h1>
+        
+        <h1>
+            Bem-vindo ao <span>Conectaê</span>,<br>
+            conectando os comércios<br>
+            perto de você!
+        </h1>
+
         <p>Valorize quem constrói o seu bairro. Compre de quem tá perto de você!</p>
 
-        <form class="busca">
-            <input type="text" placeholder="Digite seu bairro ou CEP" aria-label="Seu bairro ou CEP">
+        <!-- Formulário de busca -->
+        <form class="busca" id="form-busca">
+            <input type="text" id="campo-localizacao" placeholder="Digite seu bairro ou CEP em Camaçari" aria-label="Seu bairro ou CEP">
             <button class="btn" type="submit">Buscar</button>
         </form>
 
-        <img class="logo" src="Logo Conectaê.png" alt="Logo do Conectaê">
+        <!-- MOLDURA CIRCULAR PERFEITA DA LOGO -->
+        <div class="moldura-logo">
+            <img class="logo" src="Logo Conectaê.png" alt="Logo do Conectaê">
+        </div>
     </article>
 
-    <section id="quem-somos">
+    <section id="quem-somos" class="secao-quem-somos">
         <span class="inter">Quem somos</span>
         <h2>Valorizando o comércio do seu bairro</h2>
-        <p>O Conectaê é uma plataforma digital que reúne, em um único ambiente, microempresas e pequenos negócios, para valorizar e incentivar o comércio local e torná-lo prioridade em relação ao de outras cidades ou regiões próximas.</p>
-        <p>Com base na localização do usuário e no cadastro das empresas, ajudamos o morador a encontrar o que precisa perto de casa, sem longos deslocamentos, e ajudamos os negócios a crescer. O design é moderno e claro, para que pessoas de diferentes idades e capacidades usem com facilidade.</p>
+        <p class="texto-justificado">O Conectaê é uma plataforma digital desenvolvida para reunir, em um único ambiente, microempresas e pequenos negócios de Camaçari. Nosso objetivo é incentivar o consumo local e tornar os estabelecimentos do seu bairro a primeira opção de compra.</p>
+        <p class="texto-justificado">Através do filtro dinâmico por Bairro ou CEP e da integração com dados do Google Maps, ajudamos o morador a encontrar serviços e produtos perto de casa sem complicações, além de dar visibilidade e gerar novos clientes para os empreendedores da região.</p>
 
         <ul>
             <li>
                 <h3>Descubra o bairro</h3>
-                <p>Selecione o bairro e veja os comércios locais divididos por segmentos, como padarias, vestuário e beleza.</p>
+                <p class="texto-justificado">Informe seu Bairro ou CEP para filtrar estabelecimentos locais organizados por categorias como Moda, Alimentação, Beleza, Decoração, Festa e Pets.</p>
             </li>
             <li>
-                <h3>Divulgação</h3>
-                <p>Ajudamos os negócios a estarem onde os clientes estão: nas redes sociais, com anúncios e a criação e movimentação de contas, como Instagram e TikTok.</p>
+                <h3>Integração e Rotas</h3>
+                <p class="texto-justificado">Acesse rotas diretas no Google Maps, horários de funcionamento, contatos diretos no WhatsApp e links para os perfis das lojas no Instagram.</p>
             </li>
             <li>
-                <h3>Confiança</h3>
-                <p>Notas, comentários e o selo “Comércio Verificado do Bairro” geram credibilidade para pequenos negócios ainda pouco conhecidos.</p>
+                <h3>Confiança Local</h3>
+                <p class="texto-justificado">Veja notas e avaliações reais de vizinhos da comunidade para consumir com segurança e credibilidade nos comércios perto de você.</p>
             </li>
             <li>
-                <h3>Busca instantânea</h3>
-                <p>Digite, por exemplo, “conserto de sapato” e veja os sapateiros do bairro.</p>
+                <h3>Busca Instantânea</h3>
+                <p class="texto-justificado">Digite o nome da sua localização ou CEP no campo de busca para carregar automaticamente todas as opções disponíveis no seu bairro.</p>
             </li>
         </ul>
     </section>
 
+    <!-- Links internos das categorias -->
     <section id="comercios">
         <h3>Comércios locais</h3>
         <ul class="lista">
             <li><a href="moda.html">Moda</a></li>
-            <li><a href="alimentação.html">Alimentação</a></li>
-            <li><a href="decoração.html">Decoração</a></li>
+            <li><a href="alimentacao.html">Alimentação</a></li>
+            <li><a href="decoracao.html">Decoração</a></li>
         </ul>
     </section>
 
@@ -105,15 +116,68 @@
         <img class="foto" src="aposentado.png" alt="Foto de Augusto José">
     </section>
 </main>
+
 <footer id="agende">
     <h2>Pronto(a) para se integrar à maior plataforma local que reúne os comércios pertinhos de você?!</h2>
-    <p>Venha, conecte-se e faça parte desta rede de integração comercial camaçariense!</p>
+    
+    <p>
+        Venha, conecte-se e faça parte desta<br>
+        rede de integração comercial camaçariense!
+    </p>
+
     <h3 id="contatos">Contato</h3>
-    <span>Número: (71) 9658-5017</span>
-    <span>E-mail: conectae.camacari@gmail.com</span>
-    <a class="btn" href="cadastrar.html">Cadastre seu negócio agora mesmo</a>
+    
+    <!-- CONTATOS UM ABAIXO DO OUTRO -->
+    <div class="bloco-contato-empilhado">
+        <span>Número: (71) 9 9999-0000</span>
+        <span>E-mail: conectae.camacari@gmail.com</span>
+    </div>
+
+    <button type="button" class="btn" id="btn-cadastrar-negocio">Cadastre seu negócio agora mesmo</button>
+    
     <small>Conectaê · Conectando os comércios perto de você!</small>
 </footer>
+
+<!-- MODAL INTERATIVO COM FUNDO OPACO/SÓLIDO -->
+<div id="modal-cadastro" class="modal-sobreposto">
+    <div class="modal-conteudo">
+        <button type="button" class="fechar-modal" id="fechar-modal">&times;</button>
+        
+        <h2 class="titulo-modal">
+            Cadastrar seu negócio no<br>
+            <span class="destaque-conectae">Conectaê</span>
+        </h2>
+
+        <form id="form-cadastrar-real">
+            <label for="cad-nome">Nome do estabelecimento:</label>
+            <input type="text" id="cad-nome" required placeholder="Ex: Panificadora Sabor do Bairro">
+
+            <label for="cad-categoria">Categoria / Setor:</label>
+            <select id="cad-categoria" required>
+                <option value="moda.html">Moda</option>
+                <option value="alimentacao.html">Alimentação</option>
+                <option value="decoracao.html">Decoração</option>
+                <option value="beleza.html">Beleza</option>
+                <option value="festa.html">Festa</option>
+                <option value="pets.html">Pets</option>
+            </select>
+
+            <label for="cad-bairro">Bairro em Camaçari:</label>
+            <input type="text" id="cad-bairro" required placeholder="Ex: Centro, Ponto Certo, Inocoop...">
+
+            <label for="cad-endereco">Endereço completo:</label>
+            <input type="text" id="cad-endereco" required placeholder="Ex: Rua Costa Pinto, 120">
+
+            <label for="cad-whatsapp">WhatsApp (DDD + número):</label>
+            <input type="text" id="cad-whatsapp" placeholder="Ex: 71999990000">
+
+            <label for="cad-instagram">Instagram (sem @):</label>
+            <input type="text" id="cad-instagram" placeholder="Ex: nomedaloja">
+
+            <button type="submit" class="btn-salvar">Salvar e cadastrar negócio</button>
+        </form>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>

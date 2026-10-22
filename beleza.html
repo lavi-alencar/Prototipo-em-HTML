@@ -2,87 +2,200 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beleza - Conectaê</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setor Beleza – Conectaê</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="menu-superior">
-            <ul class="list-nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="servicos.html" class="ativo">Serviços</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="menu-superior">
+    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
+        <ul class="list-nav">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#quem-somos">Quem somos</a></li>
+            <li><a href="index.html#comercios">Comércios</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contatos">Contatos</a></li>
+            <li><a href="index.html#agende">Agende sua experiência</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="costureiras">
+<main class="titule">
+    <section class="negocio">
         <h1>Setor Beleza</h1>
-        <h2>Seção Salão de Beleza Feminino</h2>
+        <h2>Seção salões, barbearias, estética e esmalterias</h2>
+        <hr class="tracinho">
+        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
+        <ul id="listaTipos" hidden></ul>
+    </section>
 
-        <section class="filtro-bairro box">
-            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
-            <select id="select-bairro" onchange="filtrarPorBairro()">
-                <option value="todos">Mostrar todos os locais</option>
-                <option value="centro">Centro (CEP: 42800-000)</option>
-                <option value="gleba-b">Gleba B (CEP: 42802-000)</option>
-            </select>
-        </section>
-
-        <!-- ITEM 1 -->
-        <article class="box estabelecimento-card" data-bairro="centro">
-            <h3>Espaço Performance</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+    <div id="lista-estabelecimentos">
+        <!-- ==================== 1. CENTRO (CEP: 42800-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua 2 de Maio, 33, Centro" data-whatsapp="71997333379" data-instagram="socalacamacari">
+            <h1>Salão Socila Camaçari Centro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua 2 de Maio, 33 - Centro - CEP: 42800-520 | Salão de Beleza e Estética</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Unidade da rede Socila, a maior rede de salões de beleza e estética</li>
+                <li>Atendimento unissex e serviços de dia da noiva</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- ITEM 2 -->
-        <article class="box estabelecimento-card" data-bairro="gleba-b">
-            <h3>Beauty Studio</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Gleba B | <strong>CEP:</strong> 42802-000</p>
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Dois de Maio, 77, Centro" data-whatsapp="71988882001" data-instagram="barbershopdonjuanca">
+            <h1>Barbearia Don Juan Camaçari</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Dois de Maio, 77 - Centro - CEP: 42800-530 | Barbearia Clássica e Moderna</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Corte na tesoura, pigmentação capilar e sobrancelha masculina</li>
+                <li>Agendamento online pelo Booksy e ambiente climatizado</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
-        <section class="negocio">
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Costa Pinto, 105, Centro" data-whatsapp="71988882002" data-instagram="esteticacentrocamacari">
+            <h1>Centro Estético Bella Donna</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Costa Pinto, 105 - Centro - CEP: 42800-000 | Estética Facial e Corporal</p>
             <ul>
-                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-        </section>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Limpeza de pele profunda, microagulhamento e drenagem</li>
+                <li>Profissionais pós-graduadas e procedimentos seguros</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    </main>
-    
-    <script src="script.js"></script>
-    
-</body>
-</html>
+        <!-- ==================== 2. PONTO CERTO (CEP: 42801-170) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida 28 de Setembro, 120, Ponto Certo" data-whatsapp="71991234567" data-instagram="esteticavipcamacari">
+            <h1>Espaço Vip Beleza & Spa</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida 28 de Setembro, 120 - Ponto Certo | Salão de Beleza e Spa</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Design de sobrancelhas, extensão de cílios e massagem relaxante</li>
+                <li>Estacione com facilidade na porta do estabelecimento</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-</body>
-</html>
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Francisco Drumond, 88, Ponto Certo" data-whatsapp="71991234568" data-instagram="barbeariapontocerto">
+            <h1>Barbearia Ponto Certo VIP</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 88 - Ponto Certo | Barbearia</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Barba com toalha quente e alinhamento de fios</li>
+                <li>Espaço com sinuca e bebidas cortesia para clientes</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Comercial, 42, Ponto Certo" data-whatsapp="71991234569" data-instagram="esmalteriapontocerto">
+            <h1>Esmalteria & Nails Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Comercial, 42 - Ponto Certo | Esmalteria e Unhas de Gel</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Alongamento em fibra de vidro e blindagem de unhas naturais</li>
+                <li>Esmaltes importados e autoclave para esterilização total</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 3. GLEBA E (CEP: 42807-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua das Flores, 14, Gleba E" data-whatsapp="71988776655" data-instagram="esmalteriacamacari">
+            <h1>Esmalteria Bella Unha Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua das Flores, 14 - Gleba E | Esmalteria e Spa dos Pés</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Spa dos pés relaxante, esmaltação em gel e nail art</li>
+                <li>Atendimento com hora marcada em ambiente familiar</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Avenida Concêntrica, 200, Gleba E" data-whatsapp="71988776656" data-instagram="salaoglebae">
+            <h1>Studio Hair Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Concêntrica, 200 - Gleba E | Salão de Cabeleireiras</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Progressivas sem formol, botox capilar e hidratações profundas</li>
+                <li>Cortes femininos modernos e penteados para festas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua Bahia, 12, Gleba E" data-whatsapp="71988776657" data-instagram="barbeariaglebae">
+            <h1>Barbearia do Bairro Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Bahia, 12 - Gleba E | Barbearia</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Cortes degradê, nevou e risco no cabelo</li>
+                <li>Atendimento rápido sem fila de espera prolongada</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 4. ALTO DA CRUZ (CEP: 42803-010) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Amparo, 89, Alto da Cruz" data-whatsapp="71987654321" data-instagram="studiohaircamacari">
+            <h1>Studio Hair Dama de Ouro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Amparo, 89 - Alto da Cruz | Salão de Beleza</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Especialista em mechas, loiras e cronograma capilar completo</li>
+                <li>Produtos das melhores marcas do mercado profissional</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Gravatá, 10, Alto da Cruz" data-whatsapp="71987654322" data-instagram="barbeariaaltod

@@ -2,65 +2,285 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentação - Conectaê</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setor Alimentação – Conectaê</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="menu-superior">
-            <ul class="list-nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="comercios.html" class="ativo">Comércios</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="menu-superior">
+    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
+        <ul class="list-nav">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#quem-somos">Quem somos</a></li>
+            <li><a href="index.html#comercios">Comércios</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contatos">Contatos</a></li>
+            <li><a href="index.html#agende">Agende sua experiência</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="costureiras">
+<main class="titule">
+    <section class="negocio">
         <h1>Setor Alimentação</h1>
-        <h2>Seção Confeiteiros e Doceria</h2>
+        <h2>Seção restaurantes, confeitarias, lanchonetes e mercados</h2>
+        <hr class="tracinho">
+        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
+        <ul id="listaTipos" hidden></ul>
+    </section>
 
-        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
-        <section class="filtro-bairro box">
-            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
-            <select id="select-bairro" onchange="filtrarPorBairro()">
-                <option value="todos">Mostrar todos os locais</option>
-                <option value="centro">Centro (CEP: 42800-000)</option>
-                <option value="alto-da-cruz">Alto da Cruz (CEP: 42803-010)</option>
-            </select>
-        </section>
-
-        <article class="box estabelecimento-card" data-bairro="centro">
-            <h3>Confeitaria Anjo Bom</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+    <div id="lista-estabelecimentos">
+        <!-- ==================== 1. CENTRO (CEP: 42800-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Avenida Radial A, 12, Centro" data-whatsapp="71988880011" data-instagram="pizzariacamacari">
+            <h1>Pizzaria Sabor do Centro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial A, 12 - Centro | Pizzaria</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Pizzas assadas em forno a lenha e entrega rápida no Centro</li>
+                <li>Atendimento presencial e delivery no jantar</li>
             </ul>
         </article>
-        
-        <section class="negocio">
-            <ul>
-                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
-            </ul>
-        </section>
+        <hr class="tracinho">
 
-    </main>
-    
-    <script src="script.js"></script>
-</body>
-    
-</html>
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Costa Pinto, 45, Centro" data-whatsapp="71988880012" data-instagram="padariacentro">
+            <h1>Panificadora Central Camaçari</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Costa Pinto, 45 - Centro | Padaria</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Pães quentinhos a toda hora e café da manhã completo</li>
+                <li>Aceita encomendas de tortas e salgados</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Avenida Deputado Luís Eduardo Magalhães, 100, Centro" data-whatsapp="71988880013" data-instagram="restaurantecentro">
+            <h1>Restaurante Sabor da Terra</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Deputado Luís Eduardo Magalhães, 100 - Centro | Restaurante</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Comida a quilo e pratos executivos nordestinos</li>
+                <li>Ambiente amplo e climatizado</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 2. PONTO CERTO (CEP: 42801-170) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Francisco Drumond, 45, Ponto Certo" data-whatsapp="71999881122" data-instagram="docesecamas">
+            <h1>Ateliê dos Doces Camaçari</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 45 - Ponto Certo | Confeitaria</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Tortas personalizadas e doces finos para eventos</li>
+                <li>Atendimento com encomendas via WhatsApp</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Comercial, 10, Ponto Certo" data-whatsapp="71999881123" data-instagram="hamburgueriapontocerto">
+            <h1>Burguer Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Comercial, 10 - Ponto Certo | Lanchonete</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Hambúrgueres artesanais na brasa e batata frita crocante</li>
+                <li>Espaço ao ar livre e entrega rápida</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Principal, 30, Ponto Certo" data-whatsapp="71999881124" data-instagram="orientalpontocerto">
+            <h1>Sushi Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Principal, 30 - Ponto Certo | Culinária Japonesa</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Combinados de sushi frescos e pratos quentes orientais</li>
+                <li>Rodízio no local e combos para entrega</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 3. GLEBA E (CEP: 42807-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Avenida Concêntrica, 88, Gleba E" data-whatsapp="71977665544" data-instagram="superglebae">
+            <h1>Mercado e Hortifruti Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Concêntrica, 88 - Gleba E | Mercado</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Frutas, legumes e verduras selecionados diariamente</li>
+                <li>Açougue completo e preços promocionais na semana</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua das Flores, 15, Gleba E" data-whatsapp="71977665545" data-instagram="acaiglebae">
+            <h1>Açaí & Gelados Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua das Flores, 15 - Gleba E | Açaí e Sorvetes</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Açaí puro no copo ou na tigela com dezenas de acompanhamentos</li>
+                <li>Sorvetes artesanais e picolés recheados</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua Bahia, 50, Gleba E" data-whatsapp="71977665546" data-instagram="churrascariaeglebae">
+            <h1>Espetinho & Bar Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Bahia, 50 - Gleba E | Churrascaria e Bar</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Espetinhos variados de carne, frango, queijo e coração</li>
+                <li>Cerveja gelada e porções para happy hour</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 4. ALTO DA CRUZ (CEP: 42803-010) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Gravatá, 62, Alto da Cruz" data-whatsapp="7136212681" data-instagram="cabritonabrasa">
+            <h1>Restaurante Cabrito na Brasa</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Gravatá, 62 - Alto da Cruz | Restaurante</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Casa tradicional especializada em cabrito na brasa e moquecas</li>
+                <li>Telefone oficial: (71) 3621-2681</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Avenida Radial B, 200, Alto da Cruz" data-whatsapp="71988771122" data-instagram="pastelariaaltodacruz">
+            <h1>Pastelaria Crocante Alto da Cruz</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial B, 200 - Alto da Cruz | Lanchonete</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Massa artesanal frita na hora com diversos recheios caprichados</li>
+                <li>Caldo de cana gelado feito na hora</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Amparo, 10, Alto da Cruz" data-whatsapp="71988771123" data-instagram="marmitariaaltodacruz">
+            <h1>Marmitaria Sabor Caseiro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Amparo, 10 - Alto da Cruz | Restaurante / Delivery</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Comida caseira feita no dia com entrega grátis no bairro</li>
+                <li>Cardápio variado diariamente para almoço</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 5. INOCOOP (CEP: 42801-070) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 100, Inocoop" data-whatsapp="71991223344" data-instagram="pizzariainocoop">
+            <h1>Pizzaria & Forneria Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 100 - Inocoop | Pizzaria</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Pizzas de massa fina crocante e bordas recheadas de catupiry</li>
+                <li>Atendimento local e entrega residencial no Inocoop</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Rua Principal, 12, Inocoop" data-whatsapp="71991223345" data-instagram="distribuidorainocoop">
+            <h1>Distribuidora & Conveniência Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Principal, 12 - Inocoop | Bebidas e Conveniência</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Cervejas, refris, estufados e gelo com entrega rápida</li>
+                <li>Aberto até mais tarde nos fins de semana</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 150, Inocoop" data-whatsapp="71991223346" data-instagram="espettosinoocoop">
+            <h1>Espetaria & Petiscaria Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 150 - Inocoop | Bar e Petiscaria</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Petiscos variados, carne do sol com aipim e espetinhos assados</li>
+                <li>Ambiente agradável para reunir a família e amigos</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

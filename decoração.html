@@ -2,66 +2,285 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decoração - Conectaê</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setor Decoração – Conectaê</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="menu-superior">
-            <ul class="list-nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="comercios.html" class="ativo">Comércios</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="menu-superior">
+    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
+        <ul class="list-nav">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#quem-somos">Quem somos</a></li>
+            <li><a href="index.html#comercios">Comércios</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contatos">Contatos</a></li>
+            <li><a href="index.html#agende">Agende sua experiência</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="costureiras">
+<main class="titule">
+    <section class="negocio">
         <h1>Setor Decoração</h1>
-        <h2>Seção Artigos de Decoração e Design</h2>
+        <h2>Seção lojas de móveis, marcenarias, iluminação e design de interiores</h2>
+        <hr class="tracinho">
+        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
+        <ul id="listaTipos" hidden></ul>
+    </section>
 
-        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
-        <section class="filtro-bairro box">
-            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
-            <select id="select-bairro" onchange="filtrarPorBairro()">
-                <option value="todos">Mostrar todos os locais</option>
-                <option value="ponto-certo">Ponto Certo (CEP: 42801-170)</option>
-                <option value="centro">Centro (CEP: 42800-000)</option>
-            </select>
-        </section>
-
-        <article class="box estabelecimento-card" data-bairro="ponto-certo">
-            <h3>Decora Camaçari</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Ponto Certo | <strong>CEP:</strong> 42801-170</p>
+    <div id="lista-estabelecimentos">
+        <!-- ==================== 1. CENTRO (CEP: 42800-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Francisco Drumond, 735, sala 01, Centro" data-whatsapp="7136275373" data-instagram="4cantosmoveis">
+            <h1>4 Cantos Móveis e Decorações</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 735, sala 01 - Centro | Móveis e Decoração</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Loja completa de móveis e objetos decorativos para residências</li>
+                <li>Telefone comercial: (71) 3627-5373</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
-        <section class="negocio">
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Avenida Radial B, 102, Centro" data-whatsapp="71988223344" data-instagram="luzedecorcamacari">
+            <h1>Luz & Cia Iluminação</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial B, 102 - Centro | Lustres e Iluminação Decorativa</p>
             <ul>
-                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-        </section>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Pêndulos, lustres de cristal e fitas LED sob medida</li>
+                <li>Consultoria para projetos luminotécnicos residenciais e comerciais</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    </main>
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Adelina de Sá, 50, Centro" data-whatsapp="71988223345" data-instagram="quadroseartescentro">
+            <h1>Galeria Quadros & Molduras Centro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Adelina de Sá, 50 - Centro | Molduraria e Decoração</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Molduras sob medida para fotos, telas, espelhos e diplomas</li>
+                <li>Impressão em tela canvas com acabamento galeria</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- ==================== 2. PONTO CERTO (CEP: 42801-170) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Industrial, 205, Ponto Certo" data-whatsapp="71987123456" data-instagram="marcenariacamacari">
+            <h1>Marcenaria Design & Planejados</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Industrial, 205 - Ponto Certo | Móveis Planejados</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Projetos em 3D para cozinhas, dormitórios e escritórios em MDF</li>
+                <li>Garantia de acabamento refinado e instalação inclusa</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Francisco Drumond, 300, Ponto Certo" data-whatsapp="71987123457" data-instagram="tapeteseparedes">
+            <h1>Ponto Certo Papéis de Parede & Tapetes</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 300 - Ponto Certo | Decoração de Interiores</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Papéis de parede vinílicos laváveis e persianas sob medida</li>
+                <li>Instalação rápida e limpa feita por profissionais</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Comercial, 180, Ponto Certo" data-whatsapp="71987123458" data-instagram="marmorariapontocerto">
+            <h1>Marmoraria & Granitos Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Comercial, 180 - Ponto Certo | Pedras e Bancadas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Bancadas esculpidas para banheiros, cozinhas e soleiras</li>
+                <li>Mármores, granitos e pedras de quartzo sintético</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 3. GLEBA E (CEP: 42807-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua do Ouro, 31, Gleba E" data-whatsapp="71999112233" data-instagram="artesecorcamacari">
+            <h1>Art & Cor Cortinas e Enxovais</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Ouro, 31 - Gleba E | Cortinas e Decoração</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Confecção própria de cortinas sob medida e blackout</li>
+                <li>Colchas, capas de sofá e almofadas personalizadas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Avenida Concêntrica, 150, Gleba E" data-whatsapp="71999112234" data-instagram="moveisglebae">
+            <h1>Econômica Móveis Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Concêntrica, 150 - Gleba E | Loja de Móveis</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Sofás retráteis, painéis de TV, mesas de jantar e roupeiros</li>
+                <li>Entrega e montagem grátis na região de Camaçari</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua das Flores, 80, Gleba E" data-whatsapp="71999112235" data-instagram="plantasglebae">
+            <h1>Jardim & Cia Plantas e Paisagismo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua das Flores, 80 - Gleba E | Plantas Decorativas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Vasos de polietileno, plantas ornamentais de interior e adubos</li>
+                <li>Montagem e manutenção de vasos para varandas e salas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 4. ALTO DA CRUZ (CEP: 42803-010) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Gravatá, 15, Alto da Cruz" data-whatsapp="71988115566" data-instagram="vidracariaaltodacruz">
+            <h1>Vidraçaria & Espelhos Alto da Cruz</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Gravatá, 15 - Alto da Cruz | Vidros e Espelhos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Espelhos bisotados para salas e banheiros, box temperado e janelas</li>
+                <li>Orçamento sem compromisso em domicílio</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Avenida Radial B, 410, Alto da Cruz" data-whatsapp="71988115567" data-instagram="tintasaltodacruz">
+            <h1>Casa das Tintas & Cores Alto da Cruz</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial B, 410 - Alto da Cruz | Tintas e Texturas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Sistema tintométrico para criação de cores exclusivas na hora</li>
+                <li>Tintas acrílicas, cimento queimado e texturas projetadas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Amparo, 45, Alto da Cruz" data-whatsapp="71988115568" data-instagram="estofadosaltodacruz">
+            <h1>Reformadora de Estofados Silva</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Amparo, 45 - Alto da Cruz | Reforma de Sofás</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Troca de tecidos em sofás, poltronas e cadeiras de jantar</li>
+                <li>Impermeabilização e substituição de espumas antigas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 5. INOCOOP (CEP: 42801-070) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 14, Inocoop" data-whatsapp="7136276076" data-instagram="patriciosmoveis">
+            <h1>Patricios Móveis & Marcenaria</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 14 - Inocoop | Fabricação de Móveis</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Fabricação artesanal de móveis com predominância de madeira de lei</li>
+                <li>Telefone oficial: (71) 3627-6076</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Rua Principal, 55, Inocoop" data-whatsapp="71999228811" data-instagram="gessoinocoop">
+            <h1>Gesso & Iluminação Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Principal, 55 - Inocoop | Drywall e Sancas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Instalação de forro de gesso, sancas abertas com LED e divisórias</li>
+                <li>Acabamento liso pronto para pintura</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 200, Inocoop" data-whatsapp="71999228812" data-instagram="utilidadesinocoop">
+            <h1>Ateliê Casa & Decoração Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 200 - Inocoop | Utilidades e Enfeites</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Artigos de cerâmica, arranjos florais desidratados e difusores</li>
+                <li>Opções para presentear e decorar a casa com elegância</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

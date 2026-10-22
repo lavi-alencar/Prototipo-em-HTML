@@ -2,88 +2,285 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moda - Conectaê</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setor Moda – Conectaê</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="menu-superior">
-            <ul class="list-nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="comercios.html" class="ativo">Comércios</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="menu-superior">
+    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
+        <ul class="list-nav">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#quem-somos">Quem somos</a></li>
+            <li><a href="index.html#comercios">Comércios</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contatos">Contatos</a></li>
+            <li><a href="index.html#agende">Agende sua experiência</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="costureiras">
+<main class="titule">
+    <section class="negocio">
         <h1>Setor Moda</h1>
-        <h2>Seção Costureiros</h2>
+        <h2>Seção lojas de roupas, ateliês, calçados e acessórios</h2>
+        <hr class="tracinho">
+        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
+        <ul id="listaTipos" hidden></ul>
+    </section>
 
-        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
-        <section class="filtro-bairro box">
-            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
-            <select id="select-bairro" onchange="filtrarPorBairro()">
-                <option value="todos">Mostrar todos os locais</option>
-                <option value="centro">Centro (CEP: 42800-000)</option>
-                <option value="ponto-certo">Ponto Certo (CEP: 42801-170)</option>
-                <option value="gleba-e">Gleba E (CEP: 42807-000)</option>
-            </select>
-        </section>
-
-        <!-- ATELIÊ 1 -->
-        <article class="box estabelecimento-card" data-bairro="centro">
-            <h1>Ateliê Agulha Brilhante</h1>
-            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+    <div id="lista-estabelecimentos">
+        <!-- ==================== 1. CENTRO (CEP: 42800-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Adelina de Sá, 16, Centro" data-whatsapp="7136218232" data-instagram="visualmodascamacari">
+            <h1>Visual Modas Centro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Adelina de Sá, 16 - Centro | Moda Feminina e Festa</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Moda social, moda praia, moda senhora e moda festa com variedades</li>
+                <li>Telefones oficiais: (71) 3621-8232 e (71) 3621-2990</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- ATELIÊ 2 -->
-        <article class="box estabelecimento-card" data-bairro="ponto-certo">
-            <h1>Ateliê Maiane Pacheco</h1>
-            <p class="info-localizacao"><strong>Bairro:</strong> Ponto Certo | <strong>CEP:</strong> 42801-170</p>
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Francisco Drumond, 10, loja 10, Centro" data-whatsapp="7136275376" data-instagram="amorabrasilcamacari">
+            <h1>Amora Brasil Roupas</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 10, loja 10 - Centro | Roupas Femininas</p>
             <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Vestidos leves, conjuntos casuais e moda jovem feminina</li>
+                <li>Localizada no coração do centro comercial de Camaçari</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- BOTÃO PARA ALTERAR TIPO DE NEGÓCIO -->
-        <section class="negocio">
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Costa Pinto, 10, loja 12, Centro" data-whatsapp="7136441705" data-instagram="misterpolocamacari">
+            <h1>Mister Polo Masculina</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Costa Pinto, 10, loja 12 (Shopping Riviera) - Centro | Moda Masculina</p>
             <ul>
-                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-        </section>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Camisas polo, bermudas, calças jeans e moda casual masculina</li>
+                <li>Atendimento dentro do Shopping Riviera Camaçari</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    </main>
+        <!-- ==================== 2. PONTO CERTO (CEP: 42801-170) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Comercial, 88, Ponto Certo" data-whatsapp="71999887766" data-instagram="ateliedecosturacamacari">
+            <h1>Ateliê Agulha de Ouro</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Comercial, 88 - Ponto Certo | Ateliê de Costura</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Ajustes milimétricos em vestidos de festa, ternos e jeans</li>
+                <li>Confecção sob medida e troca rápida de zíperes e bainhas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Francisco Drumond, 150, Ponto Certo" data-whatsapp="71999887767" data-instagram="boutiquepontocerto">
+            <h1>Boutique Elegância Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 150 - Ponto Certo | Roupas Femininas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Looks para trabalho, alfaiataria feminina e peças exclusivas</li>
+                <li>Provadore amplo e provador com assessoria de imagem</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida 28 de Setembro, 200, Ponto Certo" data-whatsapp="71999887768" data-instagram="calcadospontocerto">
+            <h1>Sapataria & Calçados Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida 28 de Setembro, 200 - Ponto Certo | Calçados e Bolsas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Sandálias de salto, tênis esportivos, sapatos sociais e carteiras</li>
+                <li>Marcas confortáveis para uso diário</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 3. GLEBA E (CEP: 42807-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Avenida Concêntrica, 110, Gleba E" data-whatsapp="71987112233" data-instagram="bijouxecamacari">
+            <h1>Boutique Acessórios & Biju Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Concêntrica, 110 - Gleba E | Bijuterias e Acessórios</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Semi-jóias com garantia, óculos de sol, tiaras e cintos</li>
+                <li>Variedade em peças modernas para complementar qualquer look</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua das Flores, 45, Gleba E" data-whatsapp="71987112234" data-instagram="modakidsglebae">
+            <h1>Mundo Infantil Roupas & Calçados</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua das Flores, 45 - Gleba E | Moda Infantil</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Roupas para bebês, crianças e pré-adolescentes em algodão confortável</li>
+                <li>Calçados anatômicos e artigos para enxoval de bebê</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua Bahia, 70, Gleba E" data-whatsapp="71987112235" data-instagram="modaintimaglebae">
+            <h1>Segredo Íntimo Lingerie Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Bahia, 70 - Gleba E | Lingerie e Pijamas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Lingeries rendadas, sutiãs reforçados, pijamas e cuecas</li>
+                <li>Atendimento discreto e de qualidade</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 4. ALTO DA CRUZ (CEP: 42803-010) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Gravatá, 80, Alto da Cruz" data-whatsapp="71988229900" data-instagram="modastreetaltodacruz">
+            <h1>Street Modas Alto da Cruz</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Gravatá, 80 - Alto da Cruz | Moda Urbana Masculina</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Camisetas oversized, bermudas jeans, bonés e correntes</li>
+                <li>Roupas alinhadas com as tendências do streetwear</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Avenida Radial B, 250, Alto da Cruz" data-whatsapp="71988229901" data-instagram="brechoaltodacruz">
+            <h1>Brechó & Desapego Chique</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial B, 250 - Alto da Cruz | Brechó Sustentável</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Peças higienizadas e selecionadas a preços super acessíveis</li>
+                <li>Roupas de marcas conhecidas em excelente estado de conservação</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Amparo, 22, Alto da Cruz" data-whatsapp="71988229902" data-instagram="costuraaltodacruz">
+            <h1>Oficina de Costura D. Maria</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Amparo, 22 - Alto da Cruz | Conserto de Roupas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Bainhas originais de jeans, apertos de cinturas e trocas de elásticos</li>
+                <li>Serviço rápido e tradicional na comunidade</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 5. INOCOOP (CEP: 42801-070) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 30, Inocoop" data-whatsapp="71991554433" data-instagram="fitnessmodainocoop">
+            <h1>Espaço Fitness & Praia Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 30 - Inocoop | Moda Fitness e Praia</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Leggings de alta compressão, tops, biquínis e saídas de praia</li>
+                <li>Tecidos com proteção UV50+ e zero transparência</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Rua Principal, 40, Inocoop" data-whatsapp="71991554434" data-instagram="multimarcasinocoop">
+            <h1>Inocoop Multimarcas Roupas</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Principal, 40 - Inocoop | Roupas Unissex</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Calças jeans, bermudas de sarja, regatas e t-shirts estilosas</li>
+                <li>Novidades semanais direto das fábricas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 180, Inocoop" data-whatsapp="71991554435" data-instagram="sapatosbolsasinocoop">
+            <h1>Boutique dos Sapatos Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 180 - Inocoop | Calçados Femininos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Rasteirinhas elegantes, sapatilhas confortáveis e mulas</li>
+                <li>Atendimento cordial em loja climatizada no bairro</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

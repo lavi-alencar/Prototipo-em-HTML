@@ -2,78 +2,286 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festa - Conectaê</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setor Festa – Conectaê</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <nav class="menu-superior">
-            <ul class="list-nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="servicos.html" class="ativo">Serviços</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="menu-superior">
+    <a href="index.html#inicio" class="marca">Conecta<em>ê</em></a>
+    <nav>
+        <ul class="list-nav">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#quem-somos">Quem somos</a></li>
+            <li><a href="index.html#comercios">Comércios</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contatos">Contatos</a></li>
+            <li><a href="index.html#agende">Agende sua experiência</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="costureiras">
-        <h1>Setor Festas</h1>
-        <h2>Seção Espaços para Eventos</h2>
+<main class="titule">
+    <section class="negocio">
+        <h1>Setor Festa</h1>
+        <h2>Seção espaços para eventos, buffet, decoração e som</h2>
+        <hr class="tracinho">
+        <button type="button" id="btnTipo" aria-expanded="false" aria-controls="listaTipos">Alterar tipo de negócio</button>
+        <ul id="listaTipos" hidden></ul>
+    </section>
 
-        <!-- SELEÇÃO DINÂMICA DE BAIRRO DE CAMAÇARI -->
-        <section class="filtro-bairro box">
-            <label for="select-bairro"><strong>Filtrar por Bairro/CEP em Camaçari:</strong></label>
-            <select id="select-bairro" onchange="filtrarPorBairro()">
-                <option value="todos">Mostrar todos os locais</option>
-                <option value="centro">Centro (CEP: 42800-000)</option>
-                <option value="busca-vida">Busca Vida (CEP: 42820-000)</option>
-            </select>
-        </section>
-
-        <!-- ITEM 1: CASA SALVATORE -->
-        <article class="box estabelecimento-card" data-bairro="centro">
-            <h3>Casa Salvatore</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Centro | <strong>CEP:</strong> 42800-000</p>
+    <div id="lista-estabelecimentos">
+        <!-- ==================== 1. CENTRO (CEP: 42800-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Avenida Deputado Luís Eduardo Magalhães, 366, Centro" data-whatsapp="71999326190" data-instagram="camacaraplazaeventos">
+            <h1>Camaçari Plaza - Espaço de Eventos</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Deputado Luís Eduardo Magalhães, 366 - Centro | Salão de Festas</p>
             <ul>
-                <li><a href="avaliacoes.html">Ver avaliações</a></li>
-                <li><a href="contato.html">Entrar em contato</a></li>
-                <li><a href="redes.html">Encontrar nas redes sociais</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-        </article>
-
-        <!-- ITEM 2: PORTO SALVADOR EVENTOS -->
-        <article class="box estabelecimento-card" data-bairro="busca-vida">
-            <h3>Porto Salvador Eventos</h3>
-            <p class="info-localizacao"><strong>Bairro:</strong> Busca Vida | <strong>CEP:</strong> 42820-000</p>
-            <ul>
-                <li><a href="catalogo.html">Conferir catálogo completo</a></li>
-                <li><a href="horario.html">Horário de funcionamento</a></li>
-                <li><a href="rotas.html">Ver rotas</a></li>
-                <li><a href="avaliacoes.html">Avaliações de vizinhos</a></li>
-                <li><a href="contato.html">Entrar em contato no WhatsApp</a></li>
-                <li><a href="instagram.html">Encontrar no Instagram</a></li>
-            </ul>
-
             <hr class="tracinho">
-
             <ul class="diferenciais">
-                <!-- Conteúdo mantido pela estrutura -->
+                <li>Complexo com 3 salões climatizados para casamentos, formaturas e palestras</li>
+                <li>Auditório com estrutura completa e estacionamento interno</li>
             </ul>
         </article>
+        <hr class="tracinho">
 
-        <!-- BOTÃO DE ALTERAR NEGÓCIO -->
-        <section class="negocio">
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Getúlio Vargas, 18, Centro" data-whatsapp="71988334455" data-instagram="festasdecorcamacari">
+            <h1>Mundo das Festas & Decorações</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Getúlio Vargas, 18 - Centro | Loja de Artigos de Festa</p>
             <ul>
-                <li><a href="negocio.html">Alterar tipo de negócio</a></li>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
             </ul>
-        </section>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Aluguel de kits pegue e monte, arcos de balões e temas infantis</li>
+                <li>Artigos descartáveis, vela de aniversário e lembrancinhas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    </main>
+        <article class="box estabelecimento-card" data-bairro="centro" data-cep="42800000" data-endereco="Rua Costa Pinto, 80, Centro" data-whatsapp="71988334456" data-instagram="buffetcentrocamacari">
+            <h1>Buffet & Recepções Sabor de Festa</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Costa Pinto, 80 - Centro | Serviço de Buffet</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Salgados fritos e assados na hora, doces finos e garçons</li>
+                <li>Atendimento para eventos corporativos e festas particulares</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- ==================== 2. PONTO CERTO (CEP: 42801-170) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida Comercial, 140, Ponto Certo" data-whatsapp="71999227788" data-instagram="espacopontocertoeventos">
+            <h1>Casa de Festas Ponto Certo</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Comercial, 140 - Ponto Certo | Espaço para Eventos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Salão com boate integrada, iluminação cênica e camarim para noivas</li>
+                <li>Capacidade para até 200 convidados sentados</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
 
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Rua Francisco Drumond, 95, Ponto Certo" data-whatsapp="71999227789" data-instagram="docesefestas
+pontocerto">
+            <h1>Confeitaria & Doces de Festa VIP</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Francisco Drumond, 95 - Ponto Certo | Doces e Bolos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Bolos de andar cenográficos e verdadeiros em pasta americana</li>
+                <li>Brigadeiros gourmet, bem-casados e macarons</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="ponto-certo" data-cep="42801170" data-endereco="Avenida 28 de Setembro, 50, Ponto Certo" data-whatsapp="71999227790" data-instagram="fotografiafestacamacari">
+            <h1>Estúdio Foco & Foto Eventos</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida 28 de Setembro, 50 - Ponto Certo | Fotografia e Filmagem</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Cobertura fotográfica completa de aniversários e casamentos</li>
+                <li>Plataforma 360 e cabine de fotos instantâneas</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 3. GLEBA E (CEP: 42807-000) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Avenida Eixo Urbano Central, 50, Gleba E" data-whatsapp="71987554433" data-instagram="brinquedosfestacamacari">
+            <h1>Alegria Festa & Brinquedos Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Eixo Urbano Central, 50 - Gleba E | Locação de Brinquedos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Locação de cama elástica, tobogã inflável e piscina de bolinhas</li>
+                <li>Monitores treinados e focados na segurança das crianças</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua das Flores, 90, Gleba E" data-whatsapp="71987554434" data-instagram="espacopleasureglebae">
+            <h1>Espaço Verão & Lazer Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua das Flores, 90 - Gleba E | Espaço com Piscina</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Área com piscina, churrasqueira coberta, freezer e som ambiente</li>
+                <li>Ideal para confraternizações de família e aniversários diurnos</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="gleba-e" data-cep="42807000" data-endereco="Rua Bahia, 33, Gleba E" data-whatsapp="71987554435" data-instagram="salgadinhosglebae">
+            <h1>Fábrica de Salgados Gleba E</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Bahia, 33 - Gleba E | Salgados para Festa</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Coxinhas, empadinhas, quibes e bolinhas de queijo congelados ou fritos</li>
+                <li>Cento de salgados com entrega rápida no bairro</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 4. ALTO DA CRUZ (CEP: 42803-010) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua Cora Coralina, Alto da Cruz" data-whatsapp="71987824143" data-instagram="espacobreneradrian">
+            <h1>Espaço de Eventos Brener Adrian</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Cora Coralina - Alto da Cruz | Espaço de Eventos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Piscina, área de churrasco, mesa de sinuca e pula-pula</li>
+                <li>Excelente estrutura para aniversários e finais de semana</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Avenida Radial B, 500, Alto da Cruz" data-whatsapp="71988443322" data-instagram="mimosartesaltodacruz">
+            <h1>Mimos & Personalizados Alto da Cruz</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Radial B, 500 - Alto da Cruz | Papelaria Personalizada</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Caixas milk, topos de bolo em 3D e convites personalizados</li>
+                <li>Impressão em alta resolução em papel fotográfico</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="alto-da-cruz" data-cep="42803010" data-endereco="Rua do Amparo, 110, Alto da Cruz" data-whatsapp="71988443323" data-instagram="somaltodacruzeventos">
+            <h1>DJ & Sonorização Alto da Cruz</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua do Amparo, 110 - Alto da Cruz | Som e Iluminação</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Caixas de som amplificadas, fumaça e máquina de bolinhas de sabão</li>
+                <li>Repertório musical atualizado para todas as idades</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <!-- ==================== 5. INOCOOP (CEP: 42801-070) ==================== -->
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Rua Principal, 77, Inocoop" data-whatsapp="71999223311" data-instagram="somiluminacaocamacari">
+            <h1>Impacto Som & Estruturas Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Rua Principal, 77 - Inocoop | Som e Treliças</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Estrutura de praticáveis, treliças box truss e iluminação cênica</li>
+                <li>Equipamentos profissionais para DJs e bandas locais</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 85, Inocoop" data-whatsapp="71999223312" data-instagram="pegueemonteinocoop">
+            <h1>Ateliê Pegue & Monte Inocoop</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 85 - Inocoop | Decoração de Festas</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Kits fáceis de transportar com cilindros, painel romano e boleiras</li>
+                <li>Opções econômicas para mini tables em casa</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+
+        <article class="box estabelecimento-card" data-bairro="inocoop" data-cep="42801070" data-endereco="Avenida Sul, 220, Inocoop" data-whatsapp="71999223313" data-instagram="cerimonialinocoop">
+            <h1>Lumière Cerimonial & Eventos</h1>
+            <p style="font-size: 0.9rem; font-weight: bold; color: #813511; margin-bottom: 10px;">Avenida Sul, 220 - Inocoop | Assessoria de Eventos</p>
+            <ul>
+                <li><a href="#" data-acao="rotas">Ver rotas</a></li>
+                <li><a href="#" data-acao="whatsapp">Entrar em contato no WhatsApp</a></li>
+                <li><a href="#" data-acao="instagram">Encontrar no Instagram</a></li>
+            </ul>
+            <hr class="tracinho">
+            <ul class="diferenciais">
+                <li>Organização completa do protocolo de casamentos e 15 anos</li>
+                <li>Equipe de recepcionistas e coordenação no dia do evento</li>
+            </ul>
+        </article>
+        <hr class="tracinho">
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
